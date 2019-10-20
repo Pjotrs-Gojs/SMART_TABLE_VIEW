@@ -1,12 +1,96 @@
 <mvc:View	controllerName="com.SMT.SMART_TABLE_VIEW.controller.MajorView" 
 			xmlns:mvc="sap.ui.core.mvc" 
 			displayBlock="true" 
-			xmlns="sap.m">
-	<App id="app">
-		<pages>
-			<Page id="page" title="{i18n>title}">
-				<content></content>
-			</Page>
-		</pages>
-	</App>
+			xmlns="sap.m"
+			xmlns:smartTable="sap.ui.comp.smarttable"
+			xmlns:core="sap.ui.core"
+			xmlns:l="sap.ui.layout">
+		<l:FixFlex minFlexSize="760">
+		<l:flexContent>
+		<l:ResponsiveSplitter defaultPane="default">
+		<l:PaneContainer>
+			<l:SplitPane requiredParentWidth="200" id="default">
+				<Page title="SMART TABLES">
+				<Panel height="100%">
+							<smartTable:SmartTable
+											id="ST1"
+											entitySet="Categories"
+											visible="true"
+											tableType="ResponsiveTable"
+											useVariantManagement="false"
+											showVariantManagement="false"
+											useTablePersonalisation="false"
+											showTablePersonalisation="false"
+											useExportToExcel="false"
+											header="Category"
+											demandPopin="true"
+											enableAutoBinding="true"
+											showFullScreenButton="false">
+								<Table  id="ST11"
+										mode="SingleSelectMaster"
+										itemPress="select1"/>
+							</smartTable:SmartTable>
+							</Panel>
+							<Panel visible="false">
+							<smartTable:SmartTable
+											id="ST2"
+											visible="true"
+											entitySet="Products"
+											tableType="ResponsiveTable"
+											useVariantManagement="false"
+											showVariantManagement="false"
+											useTablePersonalisation="false"
+											showTablePersonalisation="false"
+											useExportToExcel="false"
+											header="Product"
+											enableAutoBinding="true">
+								<Table  id="ST22"
+										mode="SingleSelectMaster"
+										itemPress="select2"/>
+							</smartTable:SmartTable>
+							</Panel>
+							<Panel visible="false">
+							<smartTable:SmartTable
+											id="ST3"
+											visible="true"
+											entitySet="Orders"
+											tableType="ResponsiveTable"
+											useVariantManagement="false"
+											showVariantManagement="false"
+											useTablePersonalisation="false"
+											showTablePersonalisation="false"
+											useExportToExcel="false"
+											header="Order"
+											enableAutoBinding="true">
+								<Table  id="ST33"
+										mode="SingleSelectMaster"
+										itemPress="select3"/>
+							</smartTable:SmartTable>
+				</Panel>
+				</Page>
+				</l:SplitPane>
+				
+				<l:PaneContainer orientation="Vertical">
+				<l:SplitPane  requiredParentWidth="400">
+					<Panel headerText="Minimum parent width 600">
+						
+					</Panel>
+				</l:SplitPane>
+				<l:PaneContainer orientation="Horizontal">
+				<l:SplitPane  requiredParentWidth="600">
+					<Page title="Minimum parent width 800">
+						
+					</Page>
+			</l:SplitPane>
+			<l:SplitPane>
+				<Page title="Minimum parent width 800">
+						
+					</Page>
+			</l:SplitPane>
+			</l:PaneContainer>
+			</l:PaneContainer>
+		</l:PaneContainer>
+	</l:ResponsiveSplitter>	
+		</l:flexContent>
+	</l:FixFlex>
 </mvc:View>
