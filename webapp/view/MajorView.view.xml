@@ -27,7 +27,7 @@
 											showFullScreenButton="false">
 								<Table  id="ST11"
 										mode="SingleSelectMaster"
-										itemPress="select1"/>
+										selectionChange="select1"/>
 							</smartTable:SmartTable>
 							</l:SplitPane>
 							<l:SplitPane>
@@ -45,7 +45,7 @@
 											enableAutoBinding="true">
 								<Table  id="ST22"
 										mode="SingleSelectMaster"
-										itemPress="select2"/>
+										selectionChange="select2"/>
 							</smartTable:SmartTable>
 							</l:SplitPane>
 							<l:SplitPane>
@@ -63,7 +63,7 @@
 											enableAutoBinding="true">
 								<Table  id="ST33"
 										mode="SingleSelectMaster"
-										itemPress="select3"/>
+										selectionChange="select3"/>
 							</smartTable:SmartTable>
 				</l:SplitPane>
 			</l:PaneContainer>
