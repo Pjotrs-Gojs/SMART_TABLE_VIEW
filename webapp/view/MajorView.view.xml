@@ -8,9 +8,9 @@
 		<l:FixFlex minFlexSize="760">
 		<l:flexContent>
 		<l:ResponsiveSplitter defaultPane="default">
-		<l:PaneContainer>
+		<l:PaneContainer orientation="Horizontal">
+			<l:PaneContainer orientation="Vertical">
 			<l:SplitPane requiredParentWidth="200" id="default">
-				<VBox>
 							<smartTable:SmartTable
 											id="ST1"
 											entitySet="Categories"
@@ -29,7 +29,8 @@
 										mode="SingleSelectMaster"
 										itemPress="select1"/>
 							</smartTable:SmartTable>
-
+							</l:SplitPane>
+							<l:SplitPane>
 							<smartTable:SmartTable
 											id="ST2"
 											visible="true"
@@ -46,7 +47,8 @@
 										mode="SingleSelectMaster"
 										itemPress="select2"/>
 							</smartTable:SmartTable>
-
+							</l:SplitPane>
+							<l:SplitPane>
 							<smartTable:SmartTable
 											id="ST3"
 											visible="true"
@@ -63,8 +65,8 @@
 										mode="SingleSelectMaster"
 										itemPress="select3"/>
 							</smartTable:SmartTable>
-					</VBox>
 				</l:SplitPane>
+			</l:PaneContainer>
 				
 				<l:PaneContainer orientation="Vertical">
 				<l:SplitPane  requiredParentWidth="400">
@@ -79,7 +81,7 @@
 					</Panel>
 			</l:SplitPane>
 			<l:SplitPane>
-				<Panel headerText="Minimum parent width 600">
+				<Panel headerText="Minimum parent width 1000">
 						
 					</Panel>
 			</l:SplitPane>
