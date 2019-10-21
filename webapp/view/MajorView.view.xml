@@ -10,8 +10,7 @@
 		<l:ResponsiveSplitter defaultPane="default">
 		<l:PaneContainer>
 			<l:SplitPane requiredParentWidth="200" id="default">
-				<Page title="SMART TABLES">
-				<Panel height="100%">
+				<VBox>
 							<smartTable:SmartTable
 											id="ST1"
 											entitySet="Categories"
@@ -30,8 +29,7 @@
 										mode="SingleSelectMaster"
 										itemPress="select1"/>
 							</smartTable:SmartTable>
-							</Panel>
-							<Panel visible="false">
+
 							<smartTable:SmartTable
 											id="ST2"
 											visible="true"
@@ -48,8 +46,7 @@
 										mode="SingleSelectMaster"
 										itemPress="select2"/>
 							</smartTable:SmartTable>
-							</Panel>
-							<Panel visible="false">
+
 							<smartTable:SmartTable
 											id="ST3"
 											visible="true"
@@ -66,8 +63,7 @@
 										mode="SingleSelectMaster"
 										itemPress="select3"/>
 							</smartTable:SmartTable>
-				</Panel>
-				</Page>
+					</VBox>
 				</l:SplitPane>
 				
 				<l:PaneContainer orientation="Vertical">
@@ -78,14 +74,14 @@
 				</l:SplitPane>
 				<l:PaneContainer orientation="Horizontal">
 				<l:SplitPane  requiredParentWidth="600">
-					<Page title="Minimum parent width 800">
+					<Panel headerText="Minimum parent width 600">
 						
-					</Page>
+					</Panel>
 			</l:SplitPane>
 			<l:SplitPane>
-				<Page title="Minimum parent width 800">
+				<Panel headerText="Minimum parent width 600">
 						
-					</Page>
+					</Panel>
 			</l:SplitPane>
 			</l:PaneContainer>
 			</l:PaneContainer>
