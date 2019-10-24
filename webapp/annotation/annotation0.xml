@@ -13,6 +13,12 @@
 						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="CategoryName"/>
 						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Description"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="CategoryID"/>
+						</Record>
 					</Collection>
 				</Annotation>
 			</Annotations>
@@ -22,12 +28,36 @@
 						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="ProductName"/>
 						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="ProductID"/>
+						</Record>
 					</Collection>
 				</Annotation>
 			</Annotations>
 			<Annotations Target="Metadata.Order">
 				<Annotation Term="UI.LineItem">
 					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="OrderDate"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="OrderID"/>
+						</Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="Metadata.Order_Detail">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Quantity"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="UnitPrice"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Discount"/>
+						</Record>
 						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="OrderID"/>
 						</Record>

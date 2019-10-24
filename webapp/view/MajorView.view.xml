@@ -12,7 +12,7 @@
 					<l:ResponsiveSplitter defaultPane="default">
 						<l:PaneContainer orientation="Horizontal">
 							<l:PaneContainer orientation="Vertical">
-								<l:SplitPane requiredParentWidth="200" id="default">
+								<l:SplitPane id="T1">
 									<smartTable:SmartTable  id="ST1"
 															entitySet="Categories"
 															visible="true"
@@ -22,6 +22,7 @@
 															useTablePersonalisation="false"
 															showTablePersonalisation="false"
 															useExportToExcel="false"
+															showRowCount="false"
 															header="Category"
 															demandPopin="true"
 															enableAutoBinding="true"
@@ -31,51 +32,55 @@
 												selectionChange="select1"/>
 									</smartTable:SmartTable>
 								</l:SplitPane>
-								<l:SplitPane>
+								<l:SplitPane id="T2">
 									<smartTable:SmartTable	id="ST2"
 															visible="true"
 															entitySet="Products"
 															tableType="ResponsiveTable"
 															useVariantManagement="false"
 															showVariantManagement="false"
-															useTablePersonalisation="false"
-															showTablePersonalisation="false"
+															useTablePersonalisation="true"
+															showTablePersonalisation="true"
 															useExportToExcel="false"
+															showRowCount="false"
 															header="Product"
 															enableAutoBinding="true">
 										<Table  id="ST22"
 												mode="SingleSelectMaster"
-												selectionChange="select2"/>
+												selectionChange="select2"
+												visible="false"/>
 									</smartTable:SmartTable>
 								</l:SplitPane>
-								<l:SplitPane>
+								<l:SplitPane id="T3">
 									<smartTable:SmartTable
 													id="ST3"
 													visible="true"
-													entitySet="Orders"
+													entitySet="Order_Details"
 													tableType="ResponsiveTable"
 													useVariantManagement="false"
 													showVariantManagement="false"
 													useTablePersonalisation="false"
 													showTablePersonalisation="false"
 													useExportToExcel="false"
+													showRowCount="false"
 													header="Order"
 													enableAutoBinding="true">
 										<Table  id="ST33"
 												mode="SingleSelectMaster"
-												selectionChange="select3"/>
+												selectionChange="select3"
+												visible="false"/>
 									</smartTable:SmartTable>
 								</l:SplitPane>
 							</l:PaneContainer>
 							<l:PaneContainer orientation="Vertical">
-								<l:SplitPane  requiredParentWidth="400">
+								<l:SplitPane  id="rightBig">
 									<Panel headerText="Minimum parent width 600"/>
 								</l:SplitPane>
 							<l:PaneContainer orientation="Horizontal">
-								<l:SplitPane  requiredParentWidth="600">
+								<l:SplitPane  id="right1small">
 									<Panel headerText="Minimum parent width 600"/>
 								</l:SplitPane>
-								<l:SplitPane>
+								<l:SplitPane id="right2small">
 									<Panel headerText="Minimum parent width 1000"/>
 								</l:SplitPane>
 							</l:PaneContainer>
