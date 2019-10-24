@@ -39,6 +39,9 @@ sap.ui.define([
 				oPane3 = this.byId("T3");
 				oPane3.setLayoutData(oSplitterLayoutData3);
 			}
+			oView.byId("FormDetails").setVisible(false);
+			oView.byId("FormCustomer").setVisible(false);
+			oView.byId("FormEmployee").setVisible(false);
 		},
 		select2: function () {
 			var	oView = this.getView();
@@ -58,15 +61,39 @@ sap.ui.define([
 				oFilter = new sap.ui.model.Filter("ProductID", "EQ", vProductID);
 				oBinding.filter([oFilter]);
 				}
+			oView.byId("FormDetails").setVisible(false);
+			oView.byId("FormCustomer").setVisible(false);
+			oView.byId("FormEmployee").setVisible(false);
 		},
 		select3: function () {
-			// var oView = this.getView();
-			// var vOrderID = oView.byId("ST33").getSelectedItem().getBindingContext().getObject().OrderID;
-			// if (vOrderID === null || vOrderID === this.gOrderID) {
-			// 	oView.byId("ST33").removeSelections(true);
-			// } else {
-			// 	this.gOrderID = this.getView().byId("ST33").getSelectedItem().getBindingContext().getObject().OrderID;
-			// }
+			var	oView = this.getView();
+			var vOrderID = oView.byId("ST33").getSelectedItem().getBindingContext().getObject().OrderID;
+	        var form1 = oView.byId("FormDetails");
+	        var form2 = oView.byId("FormCustomer");
+	        var form3 = oView.byId("FormEmployee");
+	        form1.bindElement({ path: "/Orders(" +  vOrderID + ")" });
+	        form2.bindElement({ path: "/Orders(" +  vOrderID + ")/Customer" });
+	        form3.bindElement({ path: "/Orders(" +  vOrderID + ")/Employee" });
+			oView.byId("FormDetails").setVisible(true);
+			oView.byId("FormCustomer").setVisible(true);
+			oView.byId("FormEmployee").setVisible(true);
+		},
+		onRemoveSelection: function () {
+			var	oView = this.getView();
+			oView.byId("ST11").removeSelections(true);
+			oView.byId("ST22").removeSelections(true);
+			oView.byId("ST33").removeSelections(true);
+			oView.byId("FormDetails").setVisible(false);
+			oView.byId("FormCustomer").setVisible(false);
+			oView.byId("FormEmployee").setVisible(false);
+			oView.byId("ST22").setVisible(false);
+			oView.byId("ST33").setVisible(false);
+			var oSplitterLayoutData2= new SplitterLayoutData({size: "0%"}),
+				oSplitterLayoutData3= new SplitterLayoutData({size: "0%"}),
+				oPane2= this.byId("T2"),
+				oPane3= this.byId("T3");
+	        	oPane2.setLayoutData(oSplitterLayoutData2);
+	        	oPane3.setLayoutData(oSplitterLayoutData3);
 		}
 	});
 });
