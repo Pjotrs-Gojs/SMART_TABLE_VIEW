@@ -8,11 +8,10 @@
 			xmlns:f="sap.ui.layout.form">
 	<App id="app">
 		<pages>
-			<Page title="SMART TABLES VIEW WITH SPLITPANES">
+			<Page showHeader="false" title="SMART TABLES VIEW WITH SPLITPANES">
 				<content>
-					<Button id="onRemoveSelection" width="100%" text="Remove Selection" press="onRemoveSelection"/>
 					<l:ResponsiveSplitter defaultPane="default">
-						<l:PaneContainer orientation="Horizontal">
+						<l:PaneContainer id="PP" orientation="Horizontal">
 							<l:PaneContainer orientation="Vertical">
 								<l:SplitPane id="T1">
 									<smartTable:SmartTable  id="ST1"
@@ -31,7 +30,14 @@
 															showFullScreenButton="false">
 										<Table  id="ST11"
 												mode="SingleSelectMaster"
-												selectionChange="select1"/>
+												selectionChange="select1">
+											<headerToolbar>
+								<Toolbar>
+									<ToolbarSpacer/>
+									<Button id="onRemoveSelection" text="Remove Selections" width="100%" press="onRemoveSelection"/>
+								</Toolbar>
+							</headerToolbar>
+							</Table>
 									</smartTable:SmartTable>
 								</l:SplitPane>
 								<l:SplitPane id="T2">
@@ -46,6 +52,7 @@
 															useExportToExcel="false"
 															showRowCount="false"
 															header="Product"
+															showFullScreenButton="true"
 															enableAutoBinding="true">
 										<Table  id="ST22"
 												mode="SingleSelectMaster"
@@ -66,6 +73,7 @@
 													useExportToExcel="false"
 													showRowCount="false"
 													header="Order"
+													showFullScreenButton="true"
 													enableAutoBinding="true">
 										<Table  id="ST33"
 												mode="SingleSelectMaster"
