@@ -3,6 +3,7 @@
 			displayBlock="true" 
 			xmlns="sap.m"
 			xmlns:smartTable="sap.ui.comp.smarttable"
+			xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
 			xmlns:core="sap.ui.core"
 			xmlns:l="sap.ui.layout"
 			xmlns:f="sap.ui.layout.form">
@@ -41,9 +42,21 @@
 									</smartTable:SmartTable>
 								</l:SplitPane>
 								<l:SplitPane id="T2">
+										<VBox fitContainer="true">
+										<smartFilterBar:SmartFilterBar id="smartFilterBar" persistencyKey="UniqueAndStablePersistencyKey"
+											considerSelectionVariants="true" entitySet="Products" useDateRangeType="true">
+											<smartFilterBar:controlConfiguration>
+												<smartFilterBar:ControlConfiguration visibleInAdvancedArea="true">
+												</smartFilterBar:ControlConfiguration>
+											</smartFilterBar:controlConfiguration>
+											<smartFilterBar:layoutData>
+												<FlexItemData shrinkFactor="0"/>
+											</smartFilterBar:layoutData>
+										</smartFilterBar:SmartFilterBar>
 									<smartTable:SmartTable	id="ST2"
 															visible="true"
 															entitySet="Products"
+															smartFilterId="smartFilterBar"
 															tableType="ResponsiveTable"
 															useVariantManagement="false"
 															showVariantManagement="false"
@@ -59,6 +72,7 @@
 												selectionChange="select2"
 												visible="false"/>
 									</smartTable:SmartTable>
+									</VBox>
 								</l:SplitPane>
 								<l:SplitPane id="T3">
 									<smartTable:SmartTable
