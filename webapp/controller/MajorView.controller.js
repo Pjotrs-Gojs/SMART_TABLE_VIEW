@@ -22,14 +22,16 @@ sap.ui.define([
 			var oSplitterLayoutData2 = new SplitterLayoutData({size: "50%"}),
 				oPane2= this.byId("T2");
 	        	oPane2.setLayoutData(oSplitterLayoutData2);
+	        	
 			var	vCategoryID = oView.byId("ST11").getSelectedItem().getBindingContext().getObject().CategoryID;
 	    	this._oTable = oView.byId("ST22");
 			var oBinding = this._oTable.getBinding("items"),
 				oFilter;
 				if (vCategoryID || vCategoryID === "") {
 				this._oTable.setShowOverlay(false);
-				oFilter = new sap.ui.model.Filter("CategoryID", "EQ", vCategoryID);
-				oBinding.filter([oFilter]);
+					var vFilter = new sap.ui.model.Filter("CategoryID","EQ",vCategoryID);
+					oFilter = new sap.ui.model.Filter({ filters: [ vFilter ], and: false });	
+				oBinding.filter(oFilter);
 				}
 				if (vCategoryID === null || vCategoryID === this.gCategoryID) {
 					oView.byId("ST11").removeSelections(true);
@@ -38,10 +40,13 @@ sap.ui.define([
 				var oSplitterLayoutData3 = new SplitterLayoutData({size: "0%"}),
 				oPane3 = this.byId("T3");
 				oPane3.setLayoutData(oSplitterLayoutData3);
+				oView.byId("smartFilterBar").setVisible(true);
 			}
 			oView.byId("FormDetails").setVisible(false);
 			oView.byId("FormCustomer").setVisible(false);
 			oView.byId("FormEmployee").setVisible(false);
+			oView.byId("smartFilterBar").reset();
+			oView.byId("ST2").rebindTable();
 		},
 		select2: function () {
 			var	oView = this.getView();
@@ -66,28 +71,31 @@ sap.ui.define([
 			oView.byId("FormEmployee").setVisible(false);
 		},
 		select3: function () {
-			var	oView = this.getView();
-			var vOrderID = oView.byId("ST33").getSelectedItem().getBindingContext().getObject().OrderID;
-	        var form1 = oView.byId("FormDetails");
-	        var form2 = oView.byId("FormCustomer");
-	        var form3 = oView.byId("FormEmployee");
-	        form1.bindElement({ path: "/Orders(" +  vOrderID + ")" });
-	        form2.bindElement({ path: "/Orders(" +  vOrderID + ")/Customer" });
-	        form3.bindElement({ path: "/Orders(" +  vOrderID + ")/Employee" });
-			oView.byId("FormDetails").setVisible(true);
-			oView.byId("FormCustomer").setVisible(true);
-			oView.byId("FormEmployee").setVisible(true);
+			var	oView = this.getView(),
+				vOrderID = oView.byId("ST33").getSelectedItem().getBindingContext().getObject().OrderID,
+		        form1 = oView.byId("FormDetails"),
+		        form2 = oView.byId("FormCustomer"),
+	        	form3 = oView.byId("FormEmployee");
+			        form1.bindElement({ path: "/Orders(" +  vOrderID + ")" });
+			        form2.bindElement({ path: "/Orders(" +  vOrderID + ")/Customer" });
+			        form3.bindElement({ path: "/Orders(" +  vOrderID + ")/Employee" });
+					oView.byId("FormDetails").setVisible(true);
+					oView.byId("FormCustomer").setVisible(true);
+					oView.byId("FormEmployee").setVisible(true);
 		},
 		onRemoveSelection: function () {
 			var	oView = this.getView();
-			oView.byId("ST11").removeSelections(true);
-			oView.byId("ST22").removeSelections(true);
-			oView.byId("ST33").removeSelections(true);
-			oView.byId("FormDetails").setVisible(false);
-			oView.byId("FormCustomer").setVisible(false);
-			oView.byId("FormEmployee").setVisible(false);
-			oView.byId("ST22").setVisible(false);
-			oView.byId("ST33").setVisible(false);
+				oView.byId("ST11").removeSelections(true);
+				oView.byId("ST22").removeSelections(true);
+				oView.byId("ST33").removeSelections(true);
+				oView.byId("FormDetails").setVisible(false);
+				oView.byId("FormCustomer").setVisible(false);
+				oView.byId("FormEmployee").setVisible(false);
+				oView.byId("smartFilterBar").reset();
+				oView.byId("ST2").rebindTable();
+				oView.byId("smartFilterBar").setVisible(false);
+				oView.byId("ST22").setVisible(false);
+				oView.byId("ST33").setVisible(false);
 			var oSplitterLayoutData2= new SplitterLayoutData({size: "0%"}),
 				oSplitterLayoutData3= new SplitterLayoutData({size: "0%"}),
 				oPane2= this.byId("T2"),

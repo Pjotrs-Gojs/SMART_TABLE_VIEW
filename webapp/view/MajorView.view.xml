@@ -30,6 +30,7 @@
 															enableAutoBinding="true"
 															showFullScreenButton="false">
 										<Table  id="ST11"
+												sticky="ColumnHeaders"
 												mode="SingleSelectMaster"
 												selectionChange="select1">
 											<headerToolbar>
@@ -42,7 +43,7 @@
 									</smartTable:SmartTable>
 								</l:SplitPane>
 								<l:SplitPane id="T2">
-										<VBox fitContainer="true">
+									<VBox fitContainer="true">
 										<smartFilterBar:SmartFilterBar id="smartFilterBar" persistencyKey="UniqueAndStablePersistencyKey"
 											considerSelectionVariants="true" entitySet="Products" useDateRangeType="true">
 											<smartFilterBar:controlConfiguration>
@@ -60,14 +61,15 @@
 															tableType="ResponsiveTable"
 															useVariantManagement="false"
 															showVariantManagement="false"
-															useTablePersonalisation="true"
-															showTablePersonalisation="true"
+															useTablePersonalisation="false"
+															showTablePersonalisation="false"
 															useExportToExcel="false"
-															showRowCount="false"
+															showRowCount="true"
 															header="Product"
 															showFullScreenButton="true"
 															enableAutoBinding="true">
 										<Table  id="ST22"
+												sticky="ColumnHeaders"
 												mode="SingleSelectMaster"
 												selectionChange="select2"
 												visible="false"/>
@@ -85,11 +87,12 @@
 													useTablePersonalisation="false"
 													showTablePersonalisation="false"
 													useExportToExcel="false"
-													showRowCount="false"
+													showRowCount="true"
 													header="Order"
 													showFullScreenButton="true"
 													enableAutoBinding="true">
 										<Table  id="ST33"
+												sticky="ColumnHeaders"
 												mode="SingleSelectMaster"
 												selectionChange="select3"
 												visible="false"/>
