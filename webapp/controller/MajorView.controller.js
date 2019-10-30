@@ -23,9 +23,9 @@ sap.ui.define([
 	        var sCategoryID, aFilters = [];
 	        	for (var i = 0; i < oContext.length; i++) {
 		        	sCategoryID = oModel.getProperty(oContext[i]).CategoryID;
-		        	aFilters.push(new sap.ui.model.Filter("CategoryID","EQ",sCategoryID));
+		        	aFilters.push(new Filter("CategoryID","EQ",sCategoryID));
 	        	}
-	        var oFilter = new sap.ui.model.Filter({ filters: aFilters, and: false });
+	        var oFilter = new Filter({ filters: aFilters, and: false });
 	        var binding = oEvent.getParameter("bindingParams").filters;
 	        	binding.push(oFilter);
 		},
@@ -51,6 +51,7 @@ sap.ui.define([
 				oView.byId("FormCustomer").setVisible(false);
 				oView.byId("FormEmployee").setVisible(false);
 				oView.byId("smartFilterBar").reset();
+				oView.byId("smartFilterBar").setVisible(true);
 				oView.byId("ST2").rebindTable();
 		},
 		
@@ -61,9 +62,9 @@ sap.ui.define([
 	        var sProductID, aFilters = [];
 	        	for (var i = 0; i < oContext.length; i++) {
 		        	sProductID = oModel.getProperty(oContext[i]).ProductID;
-		        	aFilters.push(new sap.ui.model.Filter("ProductID","EQ",sProductID));
+		        	aFilters.push(new Filter("ProductID","EQ",sProductID));
 	    		}
-	        var oFilter = new sap.ui.model.Filter({ filters: aFilters, and: false });
+	        var oFilter = new Filter({ filters: aFilters, and: false });
 	        var binding  = oEvent.getParameter("bindingParams").filters;
 	        	binding.push(oFilter);
 		},
@@ -81,11 +82,11 @@ sap.ui.define([
 	    	var oContext = oView.byId("ST22").getSelectedItem();	
 		        if(oContext === null){
 					oSplitterLayoutData2 = new SplitterLayoutData({size: "50%"});
-		        	oPane2.setLayoutData(oSplitterLayoutData2);
 		        	oSplitterLayoutData3 = new SplitterLayoutData({size: "0%"});
+		        	oPane2.setLayoutData(oSplitterLayoutData2);
 		        	oPane3.setLayoutData(oSplitterLayoutData3);
 		        	oView.byId("ST33").removeSelections(true);
-				} 
+				}
 				
 				oView.byId("FormDetails").setVisible(false);
 				oView.byId("FormCustomer").setVisible(false);
@@ -115,6 +116,7 @@ sap.ui.define([
 				oView.byId("FormEmployee").setVisible(false);
 				oView.byId("smartFilterBar").reset();
 				oView.byId("ST2").rebindTable();
+				oView.byId("ST3").rebindTable();
 				oView.byId("smartFilterBar").setVisible(false);
 				oView.byId("ST22").setVisible(false);
 				oView.byId("ST33").setVisible(false);

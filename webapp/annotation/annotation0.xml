@@ -32,6 +32,10 @@
 							<PropertyValue Property="Label" String="{@i18n&gt;PRODUCT_NAME}"/>
 						</Record>
 						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="QuantityPerUnit"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;QUANTITY}"/>
+						</Record>
+						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="ProductID"/>
 							<PropertyValue Property="Label" String="{@i18n&gt;ID}"/>
 						</Record>

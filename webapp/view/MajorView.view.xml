@@ -47,7 +47,9 @@
 										<smartFilterBar:SmartFilterBar id="smartFilterBar" persistencyKey="UniqueAndStablePersistencyKey"
 											considerSelectionVariants="true" entitySet="Products" useDateRangeType="true">
 											<smartFilterBar:controlConfiguration>
-												<smartFilterBar:ControlConfiguration visibleInAdvancedArea="true">
+												<smartFilterBar:ControlConfiguration key="ProductID" visibleInAdvancedArea="true" >
+												</smartFilterBar:ControlConfiguration>
+												<smartFilterBar:ControlConfiguration key="ProductName" visibleInAdvancedArea="true" >
 												</smartFilterBar:ControlConfiguration>
 											</smartFilterBar:controlConfiguration>
 											<smartFilterBar:layoutData>
