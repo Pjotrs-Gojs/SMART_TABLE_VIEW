@@ -31,7 +31,7 @@
 															showFullScreenButton="false">
 										<Table  id="ST11"
 												sticky="ColumnHeaders"
-												mode="SingleSelectMaster"
+												mode="MultiSelect"
 												selectionChange="select1">
 											<headerToolbar>
 								<Toolbar>
@@ -70,7 +70,7 @@
 															enableAutoBinding="true">
 										<Table  id="ST22"
 												sticky="ColumnHeaders"
-												mode="SingleSelectMaster"
+												mode="MultiSelect"
 												selectionChange="select2"
 												visible="false"/>
 									</smartTable:SmartTable>
