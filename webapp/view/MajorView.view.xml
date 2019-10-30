@@ -34,12 +34,12 @@
 												mode="MultiSelect"
 												selectionChange="select1">
 											<headerToolbar>
-								<Toolbar>
-									<ToolbarSpacer/>
-									<Button id="onRemoveSelection" text="Remove Selections" width="100%" press="onRemoveSelection"/>
-								</Toolbar>
-							</headerToolbar>
-							</Table>
+												<Toolbar>
+													<ToolbarSpacer/>
+													<Button id="onRemoveSelection" text="Remove Selections" width="100%" press="onRemoveSelection"/>
+												</Toolbar>
+											</headerToolbar>
+										</Table>
 									</smartTable:SmartTable>
 								</l:SplitPane>
 								<l:SplitPane id="T2">
@@ -54,27 +54,27 @@
 												<FlexItemData shrinkFactor="0"/>
 											</smartFilterBar:layoutData>
 										</smartFilterBar:SmartFilterBar>
-									<smartTable:SmartTable	id="ST2"
-															visible="true"
-															entitySet="Products"
-															smartFilterId="smartFilterBar"
-															tableType="ResponsiveTable"
-															useVariantManagement="false"
-															showVariantManagement="false"
-															useTablePersonalisation="false"
-															showTablePersonalisation="false"
-															useExportToExcel="false"
-															showRowCount="true"
-															header="Product"
-															showFullScreenButton="true"
-															enableAutoBinding="false"
-															beforeRebindTable="onBeforeRebindTable2">
-										<Table  id="ST22"
-												sticky="ColumnHeaders"
-												mode="MultiSelect"
-												selectionChange="select2"
-												visible="false"/>
-									</smartTable:SmartTable>
+										<smartTable:SmartTable	id="ST2"
+																visible="true"
+																entitySet="Products"
+																smartFilterId="smartFilterBar"
+																tableType="ResponsiveTable"
+																useVariantManagement="false"
+																showVariantManagement="false"
+																useTablePersonalisation="false"
+																showTablePersonalisation="false"
+																useExportToExcel="false"
+																showRowCount="true"
+																header="Product"
+																showFullScreenButton="true"
+																enableAutoBinding="false"
+																beforeRebindTable="onBeforeRebindTable2">
+											<Table  id="ST22"
+													sticky="ColumnHeaders"
+													mode="MultiSelect"
+													selectionChange="select2"
+													visible="false"/>
+										</smartTable:SmartTable>
 									</VBox>
 								</l:SplitPane>
 								<l:SplitPane id="T3">
@@ -103,14 +103,14 @@
 							</l:PaneContainer>
 							<l:PaneContainer orientation="Vertical">
 								<l:SplitPane  id="rightBig">
-										<f:Form id="FormDetails"
-												editable="false"
-												visible="false">
-											<f:title>
-												<core:Title text="Order Details" />
-											</f:title>
-											<f:layout>
-												<f:ResponsiveGridLayout labelSpanXL="3"
+									<f:Form id="FormDetails"
+											editable="false"
+											visible="false">
+										<f:title>
+											<core:Title text="Order Details" />
+										</f:title>
+										<f:layout>
+											<f:ResponsiveGridLayout labelSpanXL="3"
 																		labelSpanL="3"
 																		labelSpanM="3"
 																		labelSpanS="12"
@@ -123,295 +123,289 @@
 																		columnsL="2"
 																		columnsM="2"
 																		singleContainerFullSize="false" />
-											</f:layout>
-											<f:formContainers>
-												<f:FormContainer>
-													<f:formElements>
-														<f:FormElement label="Order ID">
-															<f:fields>
-																<Text text="{OrderID}" id="OrderID"  />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Customer ID">
-															<f:fields>
-																<Text text="{CustomerID}" id="CustomerID"  />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Employee ID">
-															<f:fields>
-																<Text text="{EmployeeID}" id="EmployeeID" />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Order Date">
-															<f:fields>
-																<Text text="{OrderDate}" id="OrderDate" />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Required Date">
-															<f:fields>
-																<Text text="{RequiredDate}" id="RequiredDate" />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Shipped Date">
-															<f:fields>
-																<Text text="{ShippedDate}" id="ShippedDate"  />
-															</f:fields>
-														</f:FormElement>
-														</f:formElements>
-														</f:FormContainer>
-														<f:FormContainer>
-														<f:formElements>
-														<f:FormElement label="Ship Via">
-															<f:fields>
-																<Text text="{ShipVia}" id="ShipVia" />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Freight">
-															<f:fields>
-																<Text text="{Freight}"  id="Freight" />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Ship Name">
-															<f:fields>
-																<Text text="{ShipName}" id="ShipName" />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Ship Address">
-															<f:fields>
-																<Text text="{ShipAddress}"  id="ShipAddress" />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Ship City">
-															<f:fields>
-																<Text text="{ShipCity}" id="ShipCity" />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Ship Region">
-															<f:fields>
-																<Text text="{ShipRegion}"  id="ShipRegion" />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Ship Postal Code">
-															<f:fields>
-																<Text text="{ShipPostalCode}" id="ShipPostalCode" />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Ship Country">
-															<f:fields>
-																<Text text="{ShipCountry}"  id="ShipCountry" />
-															</f:fields>
-														</f:FormElement>
-													</f:formElements>
-												</f:FormContainer>
-											</f:formContainers>
-										</f:Form>
+										</f:layout>
+										<f:formContainers>
+											<f:FormContainer>
+												<f:formElements>
+													<f:FormElement label="Order ID">
+														<f:fields>
+															<Text text="{OrderID}" id="OrderID"  />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Customer ID">
+														<f:fields>
+															<Text text="{CustomerID}" id="CustomerID"  />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Employee ID">
+														<f:fields>
+															<Text text="{EmployeeID}" id="EmployeeID" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Order Date">
+														<f:fields>
+															<Text text="{OrderDate}" id="OrderDate" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Required Date">
+														<f:fields>
+															<Text text="{RequiredDate}" id="RequiredDate" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Shipped Date">
+														<f:fields>
+															<Text text="{ShippedDate}" id="ShippedDate"  />
+														</f:fields>
+													</f:FormElement>
+												</f:formElements>
+											</f:FormContainer>
+											<f:FormContainer>
+												<f:formElements>
+													<f:FormElement label="Ship Via">
+														<f:fields>
+															<Text text="{ShipVia}" id="ShipVia" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Freight">
+														<f:fields>
+															<Text text="{Freight}"  id="Freight" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Ship Name">
+														<f:fields>
+															<Text text="{ShipName}" id="ShipName" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Ship Address">
+														<f:fields>
+															<Text text="{ShipAddress}"  id="ShipAddress" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Ship City">
+														<f:fields>
+															<Text text="{ShipCity}" id="ShipCity" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Ship Region">
+														<f:fields>
+															<Text text="{ShipRegion}"  id="ShipRegion" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Ship Postal Code">
+														<f:fields>
+															<Text text="{ShipPostalCode}" id="ShipPostalCode" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Ship Country">
+														<f:fields>
+															<Text text="{ShipCountry}"  id="ShipCountry" />
+														</f:fields>
+													</f:FormElement>
+												</f:formElements>
+											</f:FormContainer>
+										</f:formContainers>
+									</f:Form>
 								</l:SplitPane>
 							<l:PaneContainer orientation="Horizontal">
 								<l:SplitPane  id="right1small">
 									<f:Form id="FormCustomer"
-												editable="false"
-												visible="false">
-											<f:title>
-												<core:Title text="Customer Details" />
-											</f:title>
-											<f:layout>
-												<f:ResponsiveGridLayout labelSpanXL="3"
-																		labelSpanL="3"
-																		labelSpanM="3"
-																		labelSpanS="12"
-																		adjustLabelSpan="false"
-																		emptySpanXL="4"
-																		emptySpanL="4"
-																		emptySpanM="4"
-																		emptySpanS="0"
-																		columnsXL="1"
-																		columnsL="1"
-																		columnsM="1"
-																		singleContainerFullSize="false" />
-											</f:layout>
-											<f:formContainers>
-												<f:FormContainer>
-													<f:formElements>
-														<f:FormElement label="Customer ID">
-															<f:fields>
-																<Text text="{CustomerID}" id="CustomerID2"  />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Company Name">
-															<f:fields>
-																<Text text="{CompanyName}" id="CompanyName"  />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Contact Name">
-															<f:fields>
-																<Text text="{ContactName}" id="ContactName" />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Contact Title">
-															<f:fields>
-																<Text text="{ContactTitle}" id="ContactTitle" />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Address">
-															<f:fields>
-																<Text text="{Address}" id="Address" />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="City">
-															<f:fields>
-																<Text text="{City}" id="City"  />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Region">
-															<f:fields>
-																<Text text="{Region}" id="Region" />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Postal Code">
-															<f:fields>
-																<Text text="{PostalCode}"  id="PostalCode" />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Country">
-															<f:fields>
-																<Text text="{Country}" id="Country" />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Phone">
-															<f:fields>
-																<Text text="{Phone}"  id="Phone" />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Fax">
-															<f:fields>
-																<Text text="{Fax}" id="Fax" />
-															</f:fields>
-														</f:FormElement>
-													</f:formElements>
-												</f:FormContainer>
-											</f:formContainers>
-										</f:Form>
+											editable="false"
+											visible="false">
+										<f:title>
+											<core:Title text="Customer Details" />
+										</f:title>
+										<f:layout>
+											<f:ResponsiveGridLayout labelSpanXL="3"
+																	labelSpanL="3"
+																	labelSpanM="3"
+																	labelSpanS="12"
+																	adjustLabelSpan="false"
+																	emptySpanXL="4"
+																	emptySpanL="4"
+																	emptySpanM="4"
+																	emptySpanS="0"
+																	columnsXL="1"
+																	columnsL="1"
+																	columnsM="1"
+																	singleContainerFullSize="false" />
+										</f:layout>
+										<f:formContainers>
+											<f:FormContainer>
+												<f:formElements>
+													<f:FormElement label="Customer ID">
+														<f:fields>
+															<Text text="{CustomerID}" id="CustomerID2"  />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Company Name">
+														<f:fields>
+															<Text text="{CompanyName}" id="CompanyName"  />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Contact Name">
+														<f:fields>
+															<Text text="{ContactName}" id="ContactName" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Contact Title">
+														<f:fields>
+															<Text text="{ContactTitle}" id="ContactTitle" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Address">
+														<f:fields>
+															<Text text="{Address}" id="Address" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="City">
+														<f:fields>
+															<Text text="{City}" id="City"  />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Region">
+														<f:fields>
+															<Text text="{Region}" id="Region" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Postal Code">
+														<f:fields>
+															<Text text="{PostalCode}"  id="PostalCode" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Country">
+														<f:fields>
+															<Text text="{Country}" id="Country" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Phone">
+														<f:fields>
+															<Text text="{Phone}"  id="Phone" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Fax">
+														<f:fields>
+															<Text text="{Fax}" id="Fax" />
+														</f:fields>
+													</f:FormElement>
+												</f:formElements>
+											</f:FormContainer>
+										</f:formContainers>
+									</f:Form>
 								</l:SplitPane>
 								<l:SplitPane id="right2small">
 									<f:Form id="FormEmployee"
-												editable="false"
-												visible="false">
-											<f:title>
-												<core:Title text="Employee Details" />
-											</f:title>
-											<f:layout>
-												<f:ResponsiveGridLayout labelSpanXL="3"
-																		labelSpanL="3"
-																		labelSpanM="3"
-																		labelSpanS="12"
-																		adjustLabelSpan="false"
-																		emptySpanXL="4"
-																		emptySpanL="4"
-																		emptySpanM="4"
-																		emptySpanS="0"
-																		columnsXL="1"
-																		columnsL="1"
-																		columnsM="1"
-																		singleContainerFullSize="false" />
-											</f:layout>
-											<f:formContainers>
-												<f:FormContainer>
-													<f:formElements>
-														<!--<f:FormElement>-->
-														<!--	<f:fields>-->
-														<!--		<Image src="{Photo}" width="25%" height="25%" id="image1"/>-->
-														<!--	</f:fields>-->
-														<!--</f:FormElement>-->
-														<f:FormElement label="Employee ID">
-															<f:fields>
-																<Text text="{EmployeeID}" id="EmployeeID1"  />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Last Name">
-															<f:fields>
-																<Text text="{LastName}" id="LastName"  />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="First Name">
-															<f:fields>
-																<Text text="{FirstName}" id="FirstName" />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Title">
-															<f:fields>
-																<Text text="{Title}" id="Title" />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Title Of Courtesy">
-															<f:fields>
-																<Text text="{TitleOfCourtesy}" id="TitleOfCourtesy" />
-																
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Birth Date">
-															<f:fields>
-																<Text text="{BirthDate}" id="BirthDate"  />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Hire Date">
-															<f:fields>
-																<Text text="{HireDate}" id="HireDate" />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Address">
-															<f:fields>
-																<Text text="{Address}"  id="Address1" />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="City">
-															<f:fields>
-																<Text text="{City}" id="City1" />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Region">
-															<f:fields>
-																<Text text="{Region}"  id="Region1" />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Postal Code">
-															<f:fields>
-																<Text text="{PostalCode}" id="PostalCode1" />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Country">
-															<f:fields>
-																<Text text="{Country}"  id="Country1" />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Home Phone">
-															<f:fields>
-																<Text text="{HomePhone}" id="HomePhone" />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Extension">
-															<f:fields>
-																<Text text="{Extension}"  id="Extension" />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Notes">
-															<f:fields>
-																<Text text="{Notes}"  id="Notes" />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Reports To">
-															<f:fields>
-																<Text text="{ReportsTo}" id="ReportsTo1" />
-															</f:fields>
-														</f:FormElement>
-														<f:FormElement label="Photo Path">
-															<f:fields>
-																<Text text="{PhotoPath}"  id="PhotoPath" />
-															</f:fields>
-														</f:FormElement>
-													</f:formElements>
-												</f:FormContainer>
-											</f:formContainers>
-										</f:Form>
+											editable="false"
+											visible="false">
+										<f:title>
+											<core:Title text="Employee Details" />
+										</f:title>
+										<f:layout>
+											<f:ResponsiveGridLayout labelSpanXL="3"
+																	labelSpanL="3"
+																	labelSpanM="3"
+																	labelSpanS="12"
+																	adjustLabelSpan="false"
+																	emptySpanXL="4"
+																	emptySpanL="4"
+																	emptySpanM="4"
+																	emptySpanS="0"
+																	columnsXL="1"
+																	columnsL="1"
+																	columnsM="1"
+																	singleContainerFullSize="false"/>
+										</f:layout>
+										<f:formContainers>
+											<f:FormContainer>
+												<f:formElements>
+													<f:FormElement label="Employee ID">
+														<f:fields>
+															<Text text="{EmployeeID}" id="EmployeeID1"  />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Last Name">
+														<f:fields>
+															<Text text="{LastName}" id="LastName"  />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="First Name">
+														<f:fields>
+															<Text text="{FirstName}" id="FirstName" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Title">
+														<f:fields>
+															<Text text="{Title}" id="Title" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Title Of Courtesy">
+														<f:fields>
+															<Text text="{TitleOfCourtesy}" id="TitleOfCourtesy" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Birth Date">
+														<f:fields>
+															<Text text="{BirthDate}" id="BirthDate"  />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Hire Date">
+														<f:fields>
+															<Text text="{HireDate}" id="HireDate" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Address">
+														<f:fields>
+															<Text text="{Address}"  id="Address1" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="City">
+														<f:fields>
+															<Text text="{City}" id="City1" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Region">
+														<f:fields>
+															<Text text="{Region}"  id="Region1" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Postal Code">
+														<f:fields>
+															<Text text="{PostalCode}" id="PostalCode1" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Country">
+														<f:fields>
+															<Text text="{Country}"  id="Country1" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Home Phone">
+														<f:fields>
+															<Text text="{HomePhone}" id="HomePhone" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Extension">
+														<f:fields>
+															<Text text="{Extension}"  id="Extension" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Notes">
+														<f:fields>
+															<Text text="{Notes}"  id="Notes" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Reports To">
+														<f:fields>
+															<Text text="{ReportsTo}" id="ReportsTo1" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Photo Path">
+														<f:fields>
+															<Text text="{PhotoPath}"  id="PhotoPath" />
+														</f:fields>
+													</f:FormElement>
+												</f:formElements>
+											</f:FormContainer>
+										</f:formContainers>
+									</f:Form>
 								</l:SplitPane>
 							</l:PaneContainer>
 							</l:PaneContainer>
