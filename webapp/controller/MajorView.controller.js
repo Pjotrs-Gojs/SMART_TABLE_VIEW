@@ -91,12 +91,22 @@ sap.ui.define([
 		        	oPane2.setLayoutData(oSplitterLayoutData2);
 		        	oPane3.setLayoutData(oSplitterLayoutData3);
 		        	oView.byId("ST33").removeSelections(true);
+				} else {
+		        	oView.byId("ST33").removeSelections(true);
 				}
 				
 				oView.byId("FormDetails").setVisible(false);
 				oView.byId("FormCustomer").setVisible(false);
 				oView.byId("FormEmployee").setVisible(false);
 				oView.byId("ST3").rebindTable();
+				oView.byId("ST3").applyVariant({
+		            sort: {
+		                      sortItems: [{ 
+		                                     columnKey: "UnitPrice", 
+		                                     operation:"Ascending"}
+		                                 ]
+		                   }
+		        	});
 		},
 		select3: function () {
 			var	oView = this.getView(),
