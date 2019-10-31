@@ -8,12 +8,14 @@ sap.ui.define([
 
 	return Controller.extend("com.SMT.SMART_TABLE_VIEW.controller.MajorView", {
 		onInit: function () {
-			var oSplitterLayoutData2 = new SplitterLayoutData({size: "0%"}),
-				oSplitterLayoutData3 = new SplitterLayoutData({size: "0%"}),
+			var oView = this.getView(),
+				oSplitterLayoutData2 = new SplitterLayoutData({resizable : false, size: "0%"}),
+				oSplitterLayoutData3 = new SplitterLayoutData({resizable : false, size: "0%"}),
 				oPane2 = this.byId("T2"),
 				oPane3 = this.byId("T3");
 	        	oPane2.setLayoutData(oSplitterLayoutData2);
 	        	oPane3.setLayoutData(oSplitterLayoutData3);
+				oView.byId("smartFilterBar").setVisible(false);
 		},
 		
 		onBeforeRebindTable2: function(oEvent){
@@ -38,20 +40,23 @@ sap.ui.define([
 	        	oPane2.setLayoutData(oSplitterLayoutData2);
 	        var oContext = oView.byId("ST11").getSelectedItem();	
 	        	if(oContext === null){
-						oSplitterLayoutData2 = new SplitterLayoutData({size: "0%"});
-					var oSplitterLayoutData3 = new SplitterLayoutData({size: "0%"}),
+						oSplitterLayoutData2 = new SplitterLayoutData({resizable : false, size: "0%"});
+					var oSplitterLayoutData3 = new SplitterLayoutData({resizable : false, size: "0%"}),
 						oPane3 = this.byId("T3");
 			        	oPane2.setLayoutData(oSplitterLayoutData2);
 			        	oPane3.setLayoutData(oSplitterLayoutData3);
 			        	oView.byId("ST22").removeSelections(true);
 			        	oView.byId("ST33").removeSelections(true);
-				} 
+			        	oView.byId("smartFilterBar").reset();
+			        	oView.byId("smartFilterBar").setVisible(false);
+			        	
+				} else {
+					oView.byId("smartFilterBar").setVisible(true);
+				}
 	        
 				oView.byId("FormDetails").setVisible(false);
 				oView.byId("FormCustomer").setVisible(false);
 				oView.byId("FormEmployee").setVisible(false);
-				oView.byId("smartFilterBar").reset();
-				oView.byId("smartFilterBar").setVisible(true);
 				oView.byId("ST2").rebindTable();
 		},
 		
@@ -82,7 +87,7 @@ sap.ui.define([
 	    	var oContext = oView.byId("ST22").getSelectedItem();	
 		        if(oContext === null){
 					oSplitterLayoutData2 = new SplitterLayoutData({size: "50%"});
-		        	oSplitterLayoutData3 = new SplitterLayoutData({size: "0%"});
+		        	oSplitterLayoutData3 = new SplitterLayoutData({resizable : false, size: "0%"});
 		        	oPane2.setLayoutData(oSplitterLayoutData2);
 		        	oPane3.setLayoutData(oSplitterLayoutData3);
 		        	oView.byId("ST33").removeSelections(true);

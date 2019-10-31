@@ -28,7 +28,8 @@
 															header="Category"
 															demandPopin="true"
 															enableAutoBinding="true"
-															showFullScreenButton="false">
+															showFullScreenButton="false"
+															requestAtLeastFields="CategoryID">
 										<Table  id="ST11"
 												sticky="ColumnHeaders"
 												mode="MultiSelect"
@@ -70,7 +71,8 @@
 																header="Product"
 																showFullScreenButton="true"
 																enableAutoBinding="false"
-																beforeRebindTable="onBeforeRebindTable2">
+																beforeRebindTable="onBeforeRebindTable2"
+																requestAtLeastFields="ProductID">
 											<Table  id="ST22"
 													sticky="ColumnHeaders"
 													mode="MultiSelect"
@@ -94,7 +96,8 @@
 													header="Order"
 													showFullScreenButton="true"
 													enableAutoBinding="false"
-													beforeRebindTable="onBeforeRebindTable3">
+													beforeRebindTable="onBeforeRebindTable3"
+													requestAtLeastFields="OrderID">
 										<Table  id="ST33"
 												sticky="ColumnHeaders"
 												mode="SingleSelectMaster"

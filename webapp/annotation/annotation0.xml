@@ -17,10 +17,6 @@
 						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="Description"/>
 						</Record>
-						<Record Type="UI.DataField">
-							<PropertyValue Property="Value" Path="CategoryID"/>
-							<PropertyValue Property="Label" String="{@i18n&gt;ID}"/>
-						</Record>
 					</Collection>
 				</Annotation>
 			</Annotations>
@@ -34,10 +30,6 @@
 						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="QuantityPerUnit"/>
 							<PropertyValue Property="Label" String="{@i18n&gt;QUANTITY}"/>
-						</Record>
-						<Record Type="UI.DataField">
-							<PropertyValue Property="Value" Path="ProductID"/>
-							<PropertyValue Property="Label" String="{@i18n&gt;ID}"/>
 						</Record>
 					</Collection>
 				</Annotation>
@@ -69,12 +61,93 @@
 						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="Discount"/>
 						</Record>
-						<Record Type="UI.DataField">
-							<PropertyValue Property="Value" Path="OrderID"/>
-							<PropertyValue Property="Label" String="{@i18n&gt;ID}"/>
-						</Record>
 					</Collection>
 				</Annotation>
+			</Annotations>
+			<Annotations Target="ODataWeb.Northwind.Model.NorthwindEntities/Products">
+				<Annotation Term="UI.PresentationVariant">
+					<Record Type="UI.PresentationVariantType">
+						<PropertyValue Property="RequestAtLeast">
+							<Collection/>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="Metadata.Product/ProductID">
+				<Annotation Term="UI.Hidden" Bool="false"/>
+				<Annotation Term="UI.HiddenFilter" Bool="false"/>
+			</Annotations>
+			<Annotations Target="Metadata.Product/Discontinued">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="Metadata.Product/QuantityPerUnit">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="Metadata.Product/UnitPrice">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="Metadata.Product/UnitsInStock">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="Metadata.Product/UnitsOnOrder">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="Metadata.Product/ReorderLevel">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="Metadata.Category/CategoryID">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="Metadata.Category/CategoryName">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="Metadata.Category/Description">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="Metadata.Category/Picture">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="Metadata.Supplier/SupplierID">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="Metadata.Product/SupplierID">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="Metadata.Product/CategoryID">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="Metadata.Supplier/CompanyName">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="Metadata.Supplier/ContactName">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="Metadata.Supplier/ContactTitle">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="Metadata.Supplier/Address">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="Metadata.Supplier/City">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="Metadata.Supplier/Region">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="Metadata.Supplier/PostalCode">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="Metadata.Supplier/Country">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="Metadata.Supplier/Phone">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="Metadata.Supplier/Fax">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="Metadata.Supplier/HomePage">
+				<Annotation Term="UI.HiddenFilter"/>
 			</Annotations>
 		</Schema>
 	</edmx:DataServices>
