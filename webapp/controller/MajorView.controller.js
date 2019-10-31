@@ -135,8 +135,8 @@ sap.ui.define([
 				oView.byId("smartFilterBar").setVisible(false);
 				oView.byId("ST22").setVisible(false);
 				oView.byId("ST33").setVisible(false);
-			var oSplitterLayoutData2= new SplitterLayoutData({size: "0%"}),
-				oSplitterLayoutData3= new SplitterLayoutData({size: "0%"}),
+			var oSplitterLayoutData2= new SplitterLayoutData({resizable : false, size: "0%"}),
+				oSplitterLayoutData3= new SplitterLayoutData({resizable : false, size: "0%"}),
 				oPane2= this.byId("T2"),
 				oPane3= this.byId("T3");
 	        	oPane2.setLayoutData(oSplitterLayoutData2);
