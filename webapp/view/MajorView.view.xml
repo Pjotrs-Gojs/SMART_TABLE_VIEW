@@ -12,8 +12,11 @@
 			<Page showHeader="false" title="SMART TABLES VIEW WITH SPLITPANES">
 				<content>
 					<l:ResponsiveSplitter defaultPane="default">
-						<l:PaneContainer id="PP" orientation="Horizontal">
-							<l:PaneContainer orientation="Vertical">
+						<l:PaneContainer orientation="Horizontal">
+							<l:PaneContainer id="PP" orientation="Vertical">
+								<l:layoutData>
+								      <l:SplitterLayoutData id="SLDPP" resizable="false" size="100%"/>
+								</l:layoutData>
 								<l:SplitPane id="T1">
 									<smartTable:SmartTable  id="ST1"
 															entitySet="Categories"
@@ -44,9 +47,12 @@
 									</smartTable:SmartTable>
 								</l:SplitPane>
 								<l:SplitPane id="T2">
+									<l:layoutData>
+								      <l:SplitterLayoutData id="SLD2" resizable="false" size="0%"/>
+								    </l:layoutData>
 									<VBox fitContainer="true">
 										<smartFilterBar:SmartFilterBar id="smartFilterBar" persistencyKey="UniqueAndStablePersistencyKey"
-											considerSelectionVariants="true" entitySet="Products" useDateRangeType="true">
+											considerSelectionVariants="true" entitySet="Products" useDateRangeType="true" visible="false">
 											<smartFilterBar:controlConfiguration>
 												<smartFilterBar:ControlConfiguration key="ProductID" visibleInAdvancedArea="true" >
 												</smartFilterBar:ControlConfiguration>
@@ -82,6 +88,9 @@
 									</VBox>
 								</l:SplitPane>
 								<l:SplitPane id="T3">
+									<l:layoutData>
+								      <l:SplitterLayoutData id="SLD3" resizable="false" size="0%"/>
+								    </l:layoutData>
 									<smartTable:SmartTable
 													id="ST3"
 													visible="true"
@@ -108,6 +117,9 @@
 							</l:PaneContainer>
 							<l:PaneContainer orientation="Vertical">
 								<l:SplitPane  id="rightBig">
+									<l:layoutData>
+								      <l:SplitterLayoutData id="SLDRB" resizable="false" size="100%"/>
+								    </l:layoutData>
 									<f:Form id="FormDetails"
 											editable="false"
 											visible="false">

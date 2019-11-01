@@ -8,17 +8,11 @@ sap.ui.define([
 
 	return Controller.extend("com.SMT.SMART_TABLE_VIEW.controller.MajorView", {
 		onInit: function () {
-			var oView = this.getView(),
-				oSplitterLayoutData2 = new SplitterLayoutData({resizable : false, size: "0%"}),
-				oSplitterLayoutData3 = new SplitterLayoutData({resizable : false, size: "0%"}),
-				oSplitterLayoutDataRB = new SplitterLayoutData({resizable : false, size: "100%"}),
-				oPane2 = this.byId("T2"),
-				oPane3 = this.byId("T3"),
-				oPaneRB = this.byId("rightBig");
-	        	oPane2.setLayoutData(oSplitterLayoutData2);
-	        	oPane3.setLayoutData(oSplitterLayoutData3);
-	        	oPaneRB.setLayoutData(oSplitterLayoutDataRB);
-				oView.byId("smartFilterBar").setVisible(false);
+			var oView = this.getView();
+			this._SLD2 = oView.byId("SLD2");
+			this._SLD3 = oView.byId("SLD3");
+			this._SLDRB = oView.byId("SLDRB");
+			this._SLDPP = oView.byId("SLDPP");
 		},
 		
 		onBeforeRebindTable2: function(oEvent){
@@ -38,19 +32,23 @@ sap.ui.define([
 		select1: function (oEvent) {
 			var oView = this.getView();
 				oView.byId("ST22").setVisible(true);
-			var oSplitterLayoutData2 = new SplitterLayoutData({size: "50%"}),
-				oPane2 = this.byId("T2");
-	        	oPane2.setLayoutData(oSplitterLayoutData2);
+				// this.byId("T2").setLayoutData(new SplitterLayoutData({resizable : true, size: "50%"}));
+				this._SLD2.setResizable(true);
+				this._SLD2.setSize("50%");
 	        var oContext = oView.byId("ST11").getSelectedItem();	
 	        	if(oContext === null){
-						oSplitterLayoutData2 = new SplitterLayoutData({resizable : false, size: "0%"});
-					var oSplitterLayoutData3 = new SplitterLayoutData({resizable : false, size: "0%"}),
-						oSplitterLayoutDataRB = new SplitterLayoutData({resizable : false, size: "100%"}),
-						oPane3 = this.byId("T3"),
-						oPaneRB = this.byId("rightBig");
-			        	oPane2.setLayoutData(oSplitterLayoutData2);
-			        	oPane3.setLayoutData(oSplitterLayoutData3);
-			        	oPaneRB.setLayoutData(oSplitterLayoutDataRB);
+		        		this._SLDPP.setResizable(false);
+						this._SLDPP.setSize("100%");
+						oView.byId("PP").rerender();
+						// this.byId("T2").setLayoutData(new SplitterLayoutData({resizable : false, size: "0%"}));
+						this._SLD2.setResizable(false);
+						this._SLD2.setSize("0%");
+						// this.byId("T3").setLayoutData(new SplitterLayoutData({resizable : false, size: "0%"}));
+						this._SLD3.setResizable(false);
+						this._SLD3.setSize("0%");
+						// this.byId("rightBig").setLayoutData(new SplitterLayoutData({resizable : false, size: "100%"}));
+						this._SLDRB.setResizable(false);
+						this._SLDRB.setSize("100%");
 			        	oView.byId("ST22").removeSelections(true);
 			        	oView.byId("ST33").removeSelections(true);
 			        	oView.byId("smartFilterBar").reset();
@@ -83,22 +81,27 @@ sap.ui.define([
 		select2: function () {
 			var	oView = this.getView();
 				oView.byId("ST33").setVisible(true);
-			var oSplitterLayoutData2= new SplitterLayoutData({size: "33%"}),
-				oSplitterLayoutData3= new SplitterLayoutData({size: "33%"}),
-		        oSplitterLayoutDataRB = new SplitterLayoutData({resizable : false, size: "100%"}),
-				oPane2= this.byId("T2"),
-				oPane3= this.byId("T3");
-	        	oPane2.setLayoutData(oSplitterLayoutData2);
-	        	oPane3.setLayoutData(oSplitterLayoutData3);
+				// this.byId("T2").setLayoutData(new SplitterLayoutData({resizable : true, size: "33%"}));
+				this._SLD2.setResizable(true);
+				this._SLD2.setSize("33%");
+				// this.byId("T3").setLayoutData(new SplitterLayoutData({resizable : true, size: "33%"}));
+				this._SLD3.setResizable(true);
+				this._SLD3.setSize("33%");
+		        // this.byId("rightBig").setLayoutData(new SplitterLayoutData({resizable : false, size: "100%"}));
+		        this._SLDRB.setResizable(false);
+				this._SLDRB.setSize("100%");
 	        	
 	    	var oContext = oView.byId("ST22").getSelectedItem();	
 		        if(oContext === null){
-					oSplitterLayoutData2 = new SplitterLayoutData({size: "50%"});
-		        	oSplitterLayoutData3 = new SplitterLayoutData({resizable : false, size: "0%"});
-		        	var oPaneRB = this.byId("rightBig");
-		        	oPane2.setLayoutData(oSplitterLayoutData2);
-		        	oPane3.setLayoutData(oSplitterLayoutData3);
-			        oPaneRB.setLayoutData(oSplitterLayoutDataRB);
+		        	this._SLDPP.setResizable(false);
+					this._SLDPP.setSize("100%");
+					oView.byId("PP").rerender();
+					// this.byId("T2").setLayoutData(new SplitterLayoutData({resizable : true, size: "50%"}));
+					this._SLD2.setResizable(true);
+					this._SLD2.setSize("50%");
+		        	// this.byId("T3").setLayoutData(new SplitterLayoutData({resizable : false, size: "0%"}));
+		        	this._SLD3.setResizable(false);
+					this._SLD3.setSize("0%");
 		        	oView.byId("ST33").removeSelections(true);
 				} else {
 		        	oView.byId("ST33").removeSelections(true);
@@ -118,10 +121,13 @@ sap.ui.define([
 		        	});
 		},
 		select3: function () {
-			var	oView = this.getView(),
-				oSplitterLayoutDataRB = new SplitterLayoutData({size: "50%"}),
-				oPaneRB = this.byId("rightBig");
-	        	oPaneRB.setLayoutData(oSplitterLayoutDataRB);
+			var	oView = this.getView();
+				this._SLDPP.setResizable(true);
+				this._SLDPP.setSize("50%");
+				oView.byId("PP").rerender();
+				// this.byId("rightBig").setLayoutData(new SplitterLayoutData({resizable : true, size: "50%"}));
+				this._SLDRB.setResizable(true);
+				this._SLDRB.setSize("50%");
 			
 			var	vOrderID = oView.byId("ST33").getSelectedItem().getBindingContext().getObject().OrderID,
 		        form1 = oView.byId("FormDetails"),
@@ -148,15 +154,18 @@ sap.ui.define([
 				oView.byId("smartFilterBar").setVisible(false);
 				oView.byId("ST22").setVisible(false);
 				oView.byId("ST33").setVisible(false);
-			var oSplitterLayoutData2= new SplitterLayoutData({resizable : false, size: "0%"}),
-				oSplitterLayoutData3= new SplitterLayoutData({resizable : false, size: "0%"}),
-				oSplitterLayoutDataRB = new SplitterLayoutData({resizable : false, size: "100%"}),
-				oPane2= this.byId("T2"),
-				oPane3= this.byId("T3"),
-				oPaneRB = this.byId("rightBig");
-	        	oPane2.setLayoutData(oSplitterLayoutData2);
-	        	oPane3.setLayoutData(oSplitterLayoutData3);
-	        	oPaneRB.setLayoutData(oSplitterLayoutDataRB);
+				this._SLDPP.setResizable(false);
+				this._SLDPP.setSize("100%");
+				oView.byId("PP").rerender();
+				// this.byId("T2").setLayoutData(new SplitterLayoutData({resizable : false, size: "0%"}));
+				this._SLD2.setResizable(false);
+				this._SLD2.setSize("0%");
+				// this.byId("T3").setLayoutData(new SplitterLayoutData({resizable : false, size: "0%"}));
+				this._SLD3.setResizable(false);
+				this._SLD3.setSize("0%");
+				// this.byId("rightBig").setLayoutData(new SplitterLayoutData({resizable : false, size: "100%"}));
+				this._SLDRB.setResizable(false);
+				this._SLDRB.setSize("100%");
 		}
 	});
 });
