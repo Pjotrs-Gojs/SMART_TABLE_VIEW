@@ -111,14 +111,13 @@ sap.ui.define([
 				oView.byId("FormCustomer").setVisible(false);
 				oView.byId("FormEmployee").setVisible(false);
 				oView.byId("ST3").rebindTable();
+				
 				oView.byId("ST3").applyVariant({
-		            sort: {
-		                      sortItems: [{ 
-		                                     columnKey: "UnitPrice", 
-		                                     operation:"Ascending"}
-		                                 ]
-		                   }
-		        	});
+		            sort:	{
+		                      sortItems: [{  columnKey: "UnitPrice", 
+		                                     operation:"Ascending"}]
+		            		}
+		        });	
 		},
 		select3: function () {
 			var	oView = this.getView();
