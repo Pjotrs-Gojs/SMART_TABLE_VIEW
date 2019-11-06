@@ -24,12 +24,20 @@
 				<Annotation Term="UI.LineItem">
 					<Collection>
 						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Category/CategoryName"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;NAME_OF_CATEGORY}"/>
+						</Record>
+						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="ProductName"/>
 							<PropertyValue Property="Label" String="{@i18n&gt;PRODUCT_NAME}"/>
 						</Record>
 						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="QuantityPerUnit"/>
 							<PropertyValue Property="Label" String="{@i18n&gt;QUANTITY}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="UnitPrice"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;UNIT_PRICE}"/>
 						</Record>
 					</Collection>
 				</Annotation>
@@ -52,14 +60,18 @@
 				<Annotation Term="UI.LineItem">
 					<Collection>
 						<Record Type="UI.DataField">
-							<PropertyValue Property="Value" Path="Quantity"/>
+							<PropertyValue Property="Value" Path="Product/ProductName"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;NAME_OF_PRODUCT}"/>
 						</Record>
 						<Record Type="UI.DataField">
-							<PropertyValue Property="Value" Path="UnitPrice"/>
+							<PropertyValue Property="Value" Path="Quantity"/>
 							<PropertyValue Property="Label" String="{@i18n&gt;UNIT_PRICE}"/>
 						</Record>
 						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="Discount"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="UnitPrice"/>
 						</Record>
 					</Collection>
 				</Annotation>
