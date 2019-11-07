@@ -7,12 +7,15 @@ sap.ui.define([
 	"use strict";
 
 	return Controller.extend("com.SMT.SMART_TABLE_VIEW.controller.MajorView", {
+		
 		onInit: function () {
 			var oView = this.getView();
 			this._SLD2 = oView.byId("SLD2");
 			this._SLD3 = oView.byId("SLD3");
 			this._SLDRB = oView.byId("SLDRB");
 			this._SLDPP = oView.byId("SLDPP");
+			this._SLDSS = oView.byId("SLDSS");
+			this._Sel = false;
 		},
 		
 		onBeforeRebindTable2: function(oEvent){
@@ -28,7 +31,7 @@ sap.ui.define([
 	        var binding = oEvent.getParameter("bindingParams").filters;
 	        	binding.push(oFilter);
 		},
-			
+		
 		select1: function (oEvent) {
 			var oView = this.getView();
 				oView.byId("ST22").setVisible(true);
@@ -39,7 +42,9 @@ sap.ui.define([
 	        	if(oContext === null){
 		        		this._SLDPP.setResizable(false);
 						this._SLDPP.setSize("100%");
+					if(oView.byId("FormDetails").getVisible()){
 						oView.byId("PP").rerender();
+						}
 						// this.byId("T2").setLayoutData(new SplitterLayoutData({resizable : false, size: "0%"}));
 						this._SLD2.setResizable(false);
 						this._SLD2.setSize("0%");
@@ -49,6 +54,8 @@ sap.ui.define([
 						// this.byId("rightBig").setLayoutData(new SplitterLayoutData({resizable : false, size: "100%"}));
 						this._SLDRB.setResizable(false);
 						this._SLDRB.setSize("100%");
+						this._SLDSS.setResizable(false);
+						this._SLDSS.setSize("50%");
 			        	oView.byId("ST22").removeSelections(true);
 			        	oView.byId("ST33").removeSelections(true);
 			        	oView.byId("smartFilterBar").reset();
@@ -56,12 +63,15 @@ sap.ui.define([
 			        	
 				} else {
 					oView.byId("smartFilterBar").setVisible(true);
+					oView.byId("ST22").removeSelections(true);
+					oView.byId("ST2").rebindTable();
+						this._SLD3.setResizable(false);
+						this._SLD3.setSize("0%");
 				}
 	        
-				oView.byId("FormDetails").setVisible(false);
-				oView.byId("FormCustomer").setVisible(false);
-				oView.byId("FormEmployee").setVisible(false);
-				oView.byId("ST2").rebindTable();
+					oView.byId("FormDetails").setVisible(false);
+					oView.byId("FormCustomer").setVisible(false);
+					oView.byId("FormEmployee").setVisible(false);
 		},
 		
 		onBeforeRebindTable3: function(oEvent){
@@ -77,7 +87,7 @@ sap.ui.define([
 	        var binding  = oEvent.getParameter("bindingParams").filters;
 	        	binding.push(oFilter);
 		},
-			
+		
 		select2: function () {
 			var	oView = this.getView();
 				oView.byId("ST33").setVisible(true);
@@ -95,13 +105,17 @@ sap.ui.define([
 		        if(oContext === null){
 		        	this._SLDPP.setResizable(false);
 					this._SLDPP.setSize("100%");
+				if(oView.byId("FormDetails").getVisible()){
 					oView.byId("PP").rerender();
+					}
 					// this.byId("T2").setLayoutData(new SplitterLayoutData({resizable : true, size: "50%"}));
 					this._SLD2.setResizable(true);
 					this._SLD2.setSize("50%");
 		        	// this.byId("T3").setLayoutData(new SplitterLayoutData({resizable : false, size: "0%"}));
 		        	this._SLD3.setResizable(false);
 					this._SLD3.setSize("0%");
+					this._SLDSS.setResizable(false);
+					this._SLDSS.setSize("50%");
 		        	oView.byId("ST33").removeSelections(true);
 				} else {
 		        	oView.byId("ST33").removeSelections(true);
@@ -119,15 +133,21 @@ sap.ui.define([
 		            		}
 		        });	
 		},
+		
 		select3: function () {
 			var	oView = this.getView();
+			
 				this._SLDPP.setResizable(true);
 				this._SLDPP.setSize("50%");
-				oView.byId("PP").rerender();
 				// this.byId("rightBig").setLayoutData(new SplitterLayoutData({resizable : true, size: "50%"}));
 				this._SLDRB.setResizable(true);
 				this._SLDRB.setSize("50%");
-			
+				this._SLDSS.setResizable(true);
+				this._SLDSS.setSize("50%");
+				if(!oView.byId("FormDetails").getVisible()){
+				oView.byId("PP").rerender();
+				}
+				
 			var	vOrderID = oView.byId("ST33").getSelectedItem().getBindingContext().getObject().OrderID,
 		        form1 = oView.byId("FormDetails"),
 		        form2 = oView.byId("FormCustomer"),
@@ -139,8 +159,12 @@ sap.ui.define([
 					oView.byId("FormCustomer").setVisible(true);
 					oView.byId("FormEmployee").setVisible(true);
 		},
+		
 		onRemoveSelection: function () {
 			var	oView = this.getView();
+			if(oView.byId("FormDetails").getVisible()){
+				oView.byId("PP").rerender();
+				}
 				oView.byId("ST11").removeSelections(true);
 				oView.byId("ST22").removeSelections(true);
 				oView.byId("ST33").removeSelections(true);
@@ -155,7 +179,6 @@ sap.ui.define([
 				oView.byId("ST33").setVisible(false);
 				this._SLDPP.setResizable(false);
 				this._SLDPP.setSize("100%");
-				oView.byId("PP").rerender();
 				// this.byId("T2").setLayoutData(new SplitterLayoutData({resizable : false, size: "0%"}));
 				this._SLD2.setResizable(false);
 				this._SLD2.setSize("0%");
@@ -165,6 +188,9 @@ sap.ui.define([
 				// this.byId("rightBig").setLayoutData(new SplitterLayoutData({resizable : false, size: "100%"}));
 				this._SLDRB.setResizable(false);
 				this._SLDRB.setSize("100%");
+				this._SLDSS.setResizable(false);
+				this._SLDSS.setSize("50%");
 		}
+		
 	});
 });

@@ -225,6 +225,9 @@
 								</l:SplitPane>
 							<l:PaneContainer orientation="Horizontal">
 								<l:SplitPane  id="right1small">
+								<l:layoutData>
+								      <l:SplitterLayoutData id="SLDSS" resizable="false" size="100%"/>
+								</l:layoutData>
 									<f:Form id="FormCustomer"
 											editable="false"
 											visible="false">

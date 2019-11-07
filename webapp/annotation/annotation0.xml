@@ -65,7 +65,7 @@
 						</Record>
 						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="Quantity"/>
-							<PropertyValue Property="Label" String="{@i18n&gt;UNIT_PRICE}"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;QUANTITY}"/>
 						</Record>
 						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="Discount"/>
