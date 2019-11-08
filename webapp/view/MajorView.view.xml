@@ -9,7 +9,7 @@
 			xmlns:f="sap.ui.layout.form">
 	<App id="app">
 		<pages>
-			<Page showHeader="false" title="SMART TABLES VIEW WITH SPLITPANES">
+			<Page showHeader="false" title="SMART TABLES VIEW WITH SPLITPANES AND HANA DB">
 				<content>
 					<l:ResponsiveSplitter defaultPane="default">
 						<l:PaneContainer orientation="Horizontal">
