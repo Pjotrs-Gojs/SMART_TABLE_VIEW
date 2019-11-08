@@ -15,7 +15,6 @@ sap.ui.define([
 			this._SLDRB = oView.byId("SLDRB");
 			this._SLDPP = oView.byId("SLDPP");
 			this._SLDSS = oView.byId("SLDSS");
-			this._Sel = false;
 		},
 		
 		onBeforeRebindTable2: function(oEvent){
@@ -65,6 +64,12 @@ sap.ui.define([
 					oView.byId("smartFilterBar").setVisible(true);
 					oView.byId("ST22").removeSelections(true);
 					oView.byId("ST2").rebindTable();
+					oView.byId("ST2").applyVariant({
+		            sort:	{
+		                      sortItems: [{  columnKey: "UnitPrice", 
+		                                     operation:"Ascending"}]
+		            		}
+		        });	
 						this._SLD3.setResizable(false);
 						this._SLD3.setSize("0%");
 				}
