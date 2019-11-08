@@ -1,0 +1,75 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+	<edmx:Reference Uri="/BB/com/SMT/Service/oDataSMT.xsodata/$metadata">
+		<edmx:Include Alias="Metadata" Namespace="com.SMT.Service.oDataSMT"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://wiki.scn.sap.com/wiki/download/attachments/448470968/UI.xml?api=v2">
+		<edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+	</edmx:Reference>
+	<edmx:DataServices>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="SMART_TABLE_VIEW.annotation.annotation_HANA_DB.com.SMT.Service.oDataSMT">
+			<Annotations Target="Metadata.CategoriesType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="CATEGORY"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;CATEGORY_NAME}"/>
+						</Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="Metadata.ProductsType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="PRODUCTID"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;PRODUCT_NAME}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="PRICE"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;PRICE}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="CURRENCY"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;CURRENCY}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="EMPLOYEEID"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;EMPLOYEE_ID}"/>
+						</Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="Metadata.OrdersType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="PRODUCTID"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;PRODUCT_NAME}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="PURCHASEORDERITEM"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;ORDER_ITEM}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="QUANTITY"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;QUANTITY}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="DELIVERYDATE"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;DELIVERY_DATE}"/>
+						</Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="Metadata.ProductsType/CATEGORY">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="Metadata.ProductsType/PARTNERID">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="Metadata.ProductsType/EMPLOYEEID">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

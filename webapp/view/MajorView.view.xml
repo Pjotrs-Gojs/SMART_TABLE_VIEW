@@ -27,12 +27,12 @@
 															useTablePersonalisation="false"
 															showTablePersonalisation="false"
 															useExportToExcel="false"
-															showRowCount="false"
+															showRowCount="true"
 															header="Category"
 															demandPopin="true"
 															enableAutoBinding="true"
 															showFullScreenButton="false"
-															requestAtLeastFields="CategoryID">
+															requestAtLeastFields="PRODUCTID">
 										<Table  id="ST11"
 												sticky="ColumnHeaders"
 												mode="MultiSelect"
@@ -54,9 +54,11 @@
 										<smartFilterBar:SmartFilterBar id="smartFilterBar" persistencyKey="UniqueAndStablePersistencyKey"
 											considerSelectionVariants="true" entitySet="Products" useDateRangeType="true" visible="false">
 											<smartFilterBar:controlConfiguration>
-												<smartFilterBar:ControlConfiguration key="ProductID" visibleInAdvancedArea="true" >
+												<smartFilterBar:ControlConfiguration key="PRODUCTID" visibleInAdvancedArea="true" >
 												</smartFilterBar:ControlConfiguration>
-												<smartFilterBar:ControlConfiguration key="ProductName" visibleInAdvancedArea="true" >
+												<smartFilterBar:ControlConfiguration key="PRICE" visibleInAdvancedArea="true" >
+												</smartFilterBar:ControlConfiguration>
+												<smartFilterBar:ControlConfiguration key="CURRENCY" visibleInAdvancedArea="true" >
 												</smartFilterBar:ControlConfiguration>
 											</smartFilterBar:controlConfiguration>
 											<smartFilterBar:layoutData>
@@ -78,7 +80,7 @@
 																showFullScreenButton="true"
 																enableAutoBinding="false"
 																beforeRebindTable="onBeforeRebindTable2"
-																requestAtLeastFields="ProductID">
+																requestAtLeastFields="PARTNERID">
 											<Table  id="ST22"
 													sticky="ColumnHeaders"
 													mode="MultiSelect"
@@ -94,7 +96,7 @@
 									<smartTable:SmartTable
 													id="ST3"
 													visible="true"
-													entitySet="Order_Details"
+													entitySet="Orders"
 													tableType="ResponsiveTable"
 													useVariantManagement="false"
 													showVariantManagement="false"
@@ -106,7 +108,7 @@
 													showFullScreenButton="true"
 													enableAutoBinding="false"
 													beforeRebindTable="onBeforeRebindTable3"
-													requestAtLeastFields="OrderID">
+													requestAtLeastFields="PURCHASEORDERID">
 										<Table  id="ST33"
 												sticky="ColumnHeaders"
 												mode="SingleSelectMaster"
@@ -146,76 +148,32 @@
 												<f:formElements>
 													<f:FormElement label="Order ID">
 														<f:fields>
-															<Text text="{OrderID}" id="OrderID"  />
+															<Text text="{PURCHASEORDERID}" id="OrderID"  />
 														</f:fields>
 													</f:FormElement>
-													<f:FormElement label="Customer ID">
+													<f:FormElement label="Partner ID">
 														<f:fields>
-															<Text text="{CustomerID}" id="CustomerID"  />
+															<Text text="{PARTNERID}" id="PartnerID"  />
 														</f:fields>
 													</f:FormElement>
-													<f:FormElement label="Employee ID">
+													<f:FormElement label="Gross Amount">
 														<f:fields>
-															<Text text="{EmployeeID}" id="EmployeeID" />
+															<Text text="{GROSSAMOUNT}" id="GrossAmount" />
 														</f:fields>
 													</f:FormElement>
-													<f:FormElement label="Order Date">
+													<f:FormElement label="Net Amount">
 														<f:fields>
-															<Text text="{OrderDate}" id="OrderDate" />
+															<Text text="{NETAMOUNT}" id="NetAmount" />
 														</f:fields>
 													</f:FormElement>
-													<f:FormElement label="Required Date">
+													<f:FormElement label="Tax Amount">
 														<f:fields>
-															<Text text="{RequiredDate}" id="RequiredDate" />
+															<Text text="{TAXAMOUNT}" id="TaxAmount"  />
 														</f:fields>
 													</f:FormElement>
-													<f:FormElement label="Shipped Date">
+													<f:FormElement label="Currency">
 														<f:fields>
-															<Text text="{ShippedDate}" id="ShippedDate"  />
-														</f:fields>
-													</f:FormElement>
-												</f:formElements>
-											</f:FormContainer>
-											<f:FormContainer>
-												<f:formElements>
-													<f:FormElement label="Ship Via">
-														<f:fields>
-															<Text text="{ShipVia}" id="ShipVia" />
-														</f:fields>
-													</f:FormElement>
-													<f:FormElement label="Freight">
-														<f:fields>
-															<Text text="{Freight}"  id="Freight" />
-														</f:fields>
-													</f:FormElement>
-													<f:FormElement label="Ship Name">
-														<f:fields>
-															<Text text="{ShipName}" id="ShipName" />
-														</f:fields>
-													</f:FormElement>
-													<f:FormElement label="Ship Address">
-														<f:fields>
-															<Text text="{ShipAddress}"  id="ShipAddress" />
-														</f:fields>
-													</f:FormElement>
-													<f:FormElement label="Ship City">
-														<f:fields>
-															<Text text="{ShipCity}" id="ShipCity" />
-														</f:fields>
-													</f:FormElement>
-													<f:FormElement label="Ship Region">
-														<f:fields>
-															<Text text="{ShipRegion}"  id="ShipRegion" />
-														</f:fields>
-													</f:FormElement>
-													<f:FormElement label="Ship Postal Code">
-														<f:fields>
-															<Text text="{ShipPostalCode}" id="ShipPostalCode" />
-														</f:fields>
-													</f:FormElement>
-													<f:FormElement label="Ship Country">
-														<f:fields>
-															<Text text="{ShipCountry}"  id="ShipCountry" />
+															<Text text="{CURRENCY}" id="Currency" />
 														</f:fields>
 													</f:FormElement>
 												</f:formElements>
@@ -232,7 +190,7 @@
 											editable="false"
 											visible="false">
 										<f:title>
-											<core:Title text="Customer Details" />
+											<core:Title text="Partner Details" />
 										</f:title>
 										<f:layout>
 											<f:ResponsiveGridLayout labelSpanXL="3"
@@ -252,59 +210,49 @@
 										<f:formContainers>
 											<f:FormContainer>
 												<f:formElements>
-													<f:FormElement label="Customer ID">
+													<f:FormElement label="Partner ID">
 														<f:fields>
-															<Text text="{CustomerID}" id="CustomerID2"  />
+															<Text text="{PARTNERID}" id="PartnerID1"  />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Partner Role">
+														<f:fields>
+															<Text text="{PARTNERROLE}" id="PartnerRole"  />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Email Address">
+														<f:fields>
+															<Text text="{EMAILADDRESS}" id="EmailAddress" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Phone Number">
+														<f:fields>
+															<Text text="{PHONENUMBER}" id="PhoneNumber" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Web Address">
+														<f:fields>
+															<Text text="{WEBADDRESS}" id="WebAddress"  />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Address ID">
+														<f:fields>
+															<Text text="{ADDRESSES_ADDRESSID}" id="AddressID" />
 														</f:fields>
 													</f:FormElement>
 													<f:FormElement label="Company Name">
 														<f:fields>
-															<Text text="{CompanyName}" id="CompanyName"  />
+															<Text text="{COMPANYNAME}"  id="CompanyName" />
 														</f:fields>
 													</f:FormElement>
-													<f:FormElement label="Contact Name">
+													<f:FormElement label="Legal Form">
 														<f:fields>
-															<Text text="{ContactName}" id="ContactName" />
+															<Text text="{LEGALFORM}" id="LegalForm" />
 														</f:fields>
 													</f:FormElement>
-													<f:FormElement label="Contact Title">
+													<f:FormElement label="Currency">
 														<f:fields>
-															<Text text="{ContactTitle}" id="ContactTitle" />
-														</f:fields>
-													</f:FormElement>
-													<f:FormElement label="Address">
-														<f:fields>
-															<Text text="{Address}" id="Address" />
-														</f:fields>
-													</f:FormElement>
-													<f:FormElement label="City">
-														<f:fields>
-															<Text text="{City}" id="City"  />
-														</f:fields>
-													</f:FormElement>
-													<f:FormElement label="Region">
-														<f:fields>
-															<Text text="{Region}" id="Region" />
-														</f:fields>
-													</f:FormElement>
-													<f:FormElement label="Postal Code">
-														<f:fields>
-															<Text text="{PostalCode}"  id="PostalCode" />
-														</f:fields>
-													</f:FormElement>
-													<f:FormElement label="Country">
-														<f:fields>
-															<Text text="{Country}" id="Country" />
-														</f:fields>
-													</f:FormElement>
-													<f:FormElement label="Phone">
-														<f:fields>
-															<Text text="{Phone}"  id="Phone" />
-														</f:fields>
-													</f:FormElement>
-													<f:FormElement label="Fax">
-														<f:fields>
-															<Text text="{Fax}" id="Fax" />
+															<Text text="{CURRENCY}"  id="Currency1" />
 														</f:fields>
 													</f:FormElement>
 												</f:formElements>
@@ -339,87 +287,67 @@
 												<f:formElements>
 													<f:FormElement label="Employee ID">
 														<f:fields>
-															<Text text="{EmployeeID}" id="EmployeeID1"  />
+															<Text text="{EMPLOYEEID}" id="EmployeeID"  />
 														</f:fields>
 													</f:FormElement>
 													<f:FormElement label="Last Name">
 														<f:fields>
-															<Text text="{LastName}" id="LastName"  />
+															<Text text="{NAME_LAST}" id="LastName"  />
 														</f:fields>
 													</f:FormElement>
 													<f:FormElement label="First Name">
 														<f:fields>
-															<Text text="{FirstName}" id="FirstName" />
+															<Text text="{NAME_FIRST}" id="FirstName" />
 														</f:fields>
 													</f:FormElement>
-													<f:FormElement label="Title">
+													<f:FormElement label="Sex">
 														<f:fields>
-															<Text text="{Title}" id="Title" />
+															<Text text="{SEX}" id="Sex" />
 														</f:fields>
 													</f:FormElement>
-													<f:FormElement label="Title Of Courtesy">
+													<f:FormElement label="Language">
 														<f:fields>
-															<Text text="{TitleOfCourtesy}" id="TitleOfCourtesy" />
+															<Text text="{LANGUAGE}" id="Language" />
 														</f:fields>
 													</f:FormElement>
-													<f:FormElement label="Birth Date">
+													<f:FormElement label="Email Address">
 														<f:fields>
-															<Text text="{BirthDate}" id="BirthDate"  />
+															<Text text="{EMAILADDRESS}" id="EmailAddress1"  />
 														</f:fields>
 													</f:FormElement>
-													<f:FormElement label="Hire Date">
+													<f:FormElement label="Login Name">
 														<f:fields>
-															<Text text="{HireDate}" id="HireDate" />
+															<Text text="{LOGINNAME}" id="LoginName" />
 														</f:fields>
 													</f:FormElement>
-													<f:FormElement label="Address">
+													<f:FormElement label="Address ID">
 														<f:fields>
-															<Text text="{Address}"  id="Address1" />
+															<Text text="{ADDRESSID}"  id="AddressID1" />
 														</f:fields>
 													</f:FormElement>
-													<f:FormElement label="City">
+													<f:FormElement label="Currency">
 														<f:fields>
-															<Text text="{City}" id="City1" />
+															<Text text="{CURRENCY}" id="Currency2" />
 														</f:fields>
 													</f:FormElement>
-													<f:FormElement label="Region">
+													<f:FormElement label="Salary Amount">
 														<f:fields>
-															<Text text="{Region}"  id="Region1" />
+															<Text text="{SALARYAMOUNT}"  id="SalaryAmount" />
 														</f:fields>
 													</f:FormElement>
-													<f:FormElement label="Postal Code">
+													<f:FormElement label="Account Number">
 														<f:fields>
-															<Text text="{PostalCode}" id="PostalCode1" />
+															<Text text="{ACCOUNTNUMBER}" id="AccountNumber" />
 														</f:fields>
 													</f:FormElement>
-													<f:FormElement label="Country">
+													<f:FormElement label="Bank ID">
 														<f:fields>
-															<Text text="{Country}"  id="Country1" />
+															<Text text="{BANKID}"  id="BankID" />
 														</f:fields>
 													</f:FormElement>
-													<f:FormElement label="Home Phone">
+													<f:FormElement label="Bank Name">
 														<f:fields>
-															<Text text="{HomePhone}" id="HomePhone" />
-														</f:fields>
-													</f:FormElement>
-													<f:FormElement label="Extension">
-														<f:fields>
-															<Text text="{Extension}"  id="Extension" />
-														</f:fields>
-													</f:FormElement>
-													<f:FormElement label="Notes">
-														<f:fields>
-															<Text text="{Notes}"  id="Notes" />
-														</f:fields>
-													</f:FormElement>
-													<f:FormElement label="Reports To">
-														<f:fields>
-															<Text text="{ReportsTo}" id="ReportsTo1" />
-														</f:fields>
-													</f:FormElement>
-													<f:FormElement label="Photo Path">
-														<f:fields>
-															<Text text="{PhotoPath}"  id="PhotoPath" />
+															<Text text="{BANKNAME}" id="BankName" />
 														</f:fields>
 													</f:FormElement>
 												</f:formElements>

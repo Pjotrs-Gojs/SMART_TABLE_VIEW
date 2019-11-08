@@ -21,10 +21,10 @@ sap.ui.define([
 			var oView = this.getView();
 			var oContext = oView.byId("ST11").getSelectedContextPaths();
 	        var oModel = oView.getModel();
-	        var sCategoryID, aFilters = [];
+	        var sCategory, aFilters = [];
 	        	for (var i = 0; i < oContext.length; i++) {
-		        	sCategoryID = oModel.getProperty(oContext[i]).CategoryID;
-		        	aFilters.push(new Filter("CategoryID","EQ",sCategoryID));
+		        	sCategory = oModel.getProperty(oContext[i]).CATEGORY;
+		        	aFilters.push(new Filter("CATEGORY","EQ",sCategory));
 	        	}
 	        var oFilter = new Filter({ filters: aFilters, and: false });
 	        var binding = oEvent.getParameter("bindingParams").filters;
@@ -85,8 +85,8 @@ sap.ui.define([
 	        var oModel = oView.getModel();
 	        var sProductID, aFilters = [];
 	        	for (var i = 0; i < oContext.length; i++) {
-		        	sProductID = oModel.getProperty(oContext[i]).ProductID;
-		        	aFilters.push(new Filter("ProductID","EQ",sProductID));
+		        	sProductID = oModel.getProperty(oContext[i]).PRODUCTID;
+		        	aFilters.push(new Filter("PRODUCTID","EQ",sProductID));
 	    		}
 	        var oFilter = new Filter({ filters: aFilters, and: false });
 	        var binding  = oEvent.getParameter("bindingParams").filters;
@@ -133,7 +133,7 @@ sap.ui.define([
 				
 				oView.byId("ST3").applyVariant({
 		            sort:	{
-		                      sortItems: [{  columnKey: "UnitPrice", 
+		                      sortItems: [{  columnKey: "QUANTITY", 
 		                                     operation:"Ascending"}]
 		            		}
 		        });	
@@ -153,16 +153,18 @@ sap.ui.define([
 				oView.byId("PP").rerender();
 				}
 				
-			var	vOrderID = oView.byId("ST33").getSelectedItem().getBindingContext().getObject().OrderID,
+			var	vOrderID = oView.byId("ST33").getSelectedItem().getBindingContext().getObject().PURCHASEORDERID,
+		    	vPartnerID = oView.byId("ST22").getSelectedItem().getBindingContext().getObject().PARTNERID,
+		    	vEmployeeID = oView.byId("ST22").getSelectedItem().getBindingContext().getObject().EMPLOYEEID,
 		        form1 = oView.byId("FormDetails"),
-		        form2 = oView.byId("FormCustomer"),
+		    	form2 = oView.byId("FormCustomer"),
 	        	form3 = oView.byId("FormEmployee");
-			        form1.bindElement({ path: "/Orders(" +  vOrderID + ")" });
-			        form2.bindElement({ path: "/Orders(" +  vOrderID + ")/Customer" });
-			        form3.bindElement({ path: "/Orders(" +  vOrderID + ")/Employee" });
+			    form1.bindElement({ path: "/Order_Details('" +  vOrderID + "')" });
+		    	form2.bindElement({ path: "/Business_Partner('" +  vPartnerID + "')" });
+			    form3.bindElement({ path: "/Employees('" +  vEmployeeID + "')" });
 					oView.byId("FormDetails").setVisible(true);
-					oView.byId("FormCustomer").setVisible(true);
 					oView.byId("FormEmployee").setVisible(true);
+					oView.byId("FormCustomer").setVisible(true);
 		},
 		
 		onRemoveSelection: function () {

@@ -14,21 +14,21 @@
 			"version": "0.0.0"
 		},
 		"dataSources": {
-			"Northwind.svc": {
-				"uri": "/Northwind/V2/Northwind/Northwind.svc/",
+			"oDataSMT.xsodata": {
+				"uri": "/BB/com/SMT/Service/oDataSMT.xsodata/",
 				"type": "OData",
 				"settings": {
-					"localUri": "localService/metadata.xml",
+					"localUri": "localService/oDataSMT.xsodata/metadata.xml",
 					"annotations": [
-						"annotation0"
+						"annotation_HANA_DB"
 					]
 				}
 			},
-			"annotation0": {
+			"annotation_HANA_DB": {
 				"type": "ODataAnnotation",
-				"uri": "annotation/annotation0.xml",
+				"uri": "annotation/annotation_HANA_DB.xml",
 				"settings": {
-					"localUri": "annotation/annotation0.xml"
+					"localUri": "annotation/annotation_HANA_DB.xml"
 				}
 			}
 		}
@@ -83,7 +83,7 @@
 					"defaultBindingMode": "OneWay",
 					"defaultCountMode": "Request"
 				},
-				"dataSource": "Northwind.svc",
+				"dataSource": "oDataSMT.xsodata",
 				"preload": true
 			},
 			"@i18n": {

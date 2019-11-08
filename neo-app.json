@@ -44,6 +44,14 @@
         "name": "Northwind"
       },
       "description": "Northwind OData services"
+    },
+    {
+      "path": "/BB",
+      "target": {
+        "type": "destination",
+        "name": "BB"
+      },
+      "description": "BB"
     }
   ],
   "sendWelcomeFileRedirect": true
