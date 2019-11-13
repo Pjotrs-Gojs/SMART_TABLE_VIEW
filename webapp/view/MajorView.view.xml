@@ -139,8 +139,8 @@
 																		emptySpanM="4"
 																		emptySpanS="0"
 																		columnsXL="1"
-																		columnsL="2"
-																		columnsM="2"
+																		columnsL="1"
+																		columnsM="1"
 																		singleContainerFullSize="false" />
 										</f:layout>
 										<f:formContainers>

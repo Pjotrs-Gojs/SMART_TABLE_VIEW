@@ -8,6 +8,7 @@ sap.ui.define([
 
 	return Controller.extend("com.SMT.SMART_TABLE_VIEW.controller.MajorView", {
 		
+		
 		onInit: function () {
 			var oView = this.getView();
 			this._SLD2 = oView.byId("SLD2");
