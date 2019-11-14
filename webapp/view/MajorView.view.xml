@@ -122,71 +122,7 @@
 									<l:layoutData>
 								      <l:SplitterLayoutData id="SLDRB" resizable="false" size="100%"/>
 								    </l:layoutData>
-									<f:Form id="FormDetails"
-											editable="false"
-											visible="false">
-										<f:title>
-											<core:Title text="Order Details" />
-										</f:title>
-										<f:layout>
-											<f:ResponsiveGridLayout labelSpanXL="3"
-																		labelSpanL="3"
-																		labelSpanM="3"
-																		labelSpanS="12"
-																		adjustLabelSpan="false"
-																		emptySpanXL="4"
-																		emptySpanL="4"
-																		emptySpanM="4"
-																		emptySpanS="0"
-																		columnsXL="1"
-																		columnsL="1"
-																		columnsM="1"
-																		singleContainerFullSize="false" />
-										</f:layout>
-										<f:formContainers>
-											<f:FormContainer>
-												<f:formElements>
-													<f:FormElement label="Order ID">
-														<f:fields>
-															<Text text="{PURCHASEORDERID}" id="OrderID"  />
-														</f:fields>
-													</f:FormElement>
-													<f:FormElement label="Partner ID">
-														<f:fields>
-															<Text text="{PARTNERID}" id="PartnerID"  />
-														</f:fields>
-													</f:FormElement>
-													<f:FormElement label="Gross Amount">
-														<f:fields>
-															<Text text="{GROSSAMOUNT}" id="GrossAmount" />
-														</f:fields>
-													</f:FormElement>
-													<f:FormElement label="Net Amount">
-														<f:fields>
-															<Text text="{NETAMOUNT}" id="NetAmount" />
-														</f:fields>
-													</f:FormElement>
-													<f:FormElement label="Tax Amount">
-														<f:fields>
-															<Text text="{TAXAMOUNT}" id="TaxAmount"  />
-														</f:fields>
-													</f:FormElement>
-													<f:FormElement label="Currency">
-														<f:fields>
-															<Text text="{CURRENCY}" id="Currency" />
-														</f:fields>
-													</f:FormElement>
-												</f:formElements>
-											</f:FormContainer>
-										</f:formContainers>
-									</f:Form>
-								</l:SplitPane>
-							<l:PaneContainer orientation="Horizontal">
-								<l:SplitPane  id="right1small">
-								<l:layoutData>
-								      <l:SplitterLayoutData id="SLDSS" resizable="false" size="100%"/>
-								</l:layoutData>
-									<f:Form id="FormCustomer"
+										<f:Form id="FormCustomer"
 											editable="false"
 											visible="false">
 										<f:title>
@@ -255,12 +191,21 @@
 															<Text text="{CURRENCY}"  id="Currency1" />
 														</f:fields>
 													</f:FormElement>
+													<f:FormElement>
+														<f:fields>
+															<HBox id="googleMap" height="300px" width="100%"></HBox>
+														</f:fields>
+													</f:FormElement>
 												</f:formElements>
 											</f:FormContainer>
 										</f:formContainers>
 									</f:Form>
 								</l:SplitPane>
-								<l:SplitPane id="right2small">
+							<l:PaneContainer orientation="Horizontal">
+								<l:SplitPane  id="right1small">
+								<l:layoutData>
+								      <l:SplitterLayoutData id="SLDSS" resizable="false" size="100%"/>
+								</l:layoutData>
 									<f:Form id="FormEmployee"
 											editable="false"
 											visible="false">
@@ -348,6 +293,66 @@
 													<f:FormElement label="Bank Name">
 														<f:fields>
 															<Text text="{BANKNAME}" id="BankName" />
+														</f:fields>
+													</f:FormElement>
+												</f:formElements>
+											</f:FormContainer>
+										</f:formContainers>
+									</f:Form>
+								</l:SplitPane>
+								<l:SplitPane id="right2small">
+									<f:Form id="FormDetails"
+											editable="false"
+											visible="false">
+										<f:title>
+											<core:Title text="Order Details" />
+										</f:title>
+										<f:layout>
+											<f:ResponsiveGridLayout labelSpanXL="3"
+																		labelSpanL="3"
+																		labelSpanM="3"
+																		labelSpanS="12"
+																		adjustLabelSpan="false"
+																		emptySpanXL="4"
+																		emptySpanL="4"
+																		emptySpanM="4"
+																		emptySpanS="0"
+																		columnsXL="1"
+																		columnsL="1"
+																		columnsM="1"
+																		singleContainerFullSize="false" />
+										</f:layout>
+										<f:formContainers>
+											<f:FormContainer>
+												<f:formElements>
+													<f:FormElement label="Order ID">
+														<f:fields>
+															<Text text="{PURCHASEORDERID}" id="OrderID"  />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Partner ID">
+														<f:fields>
+															<Text text="{PARTNERID}" id="PartnerID"  />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Gross Amount">
+														<f:fields>
+															<Text text="{GROSSAMOUNT}" id="GrossAmount" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Net Amount">
+														<f:fields>
+															<Text text="{NETAMOUNT}" id="NetAmount" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Tax Amount">
+														<f:fields>
+															<Text text="{TAXAMOUNT}" id="TaxAmount"  />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Currency">
+														<f:fields>
+															<Text text="{CURRENCY}" id="Currency" />
 														</f:fields>
 													</f:FormElement>
 												</f:formElements>

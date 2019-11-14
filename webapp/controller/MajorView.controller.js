@@ -166,6 +166,27 @@ sap.ui.define([
 					oView.byId("FormDetails").setVisible(true);
 					oView.byId("FormEmployee").setVisible(true);
 					oView.byId("FormCustomer").setVisible(true);
+				// GOOGLE MAP INTEGRATION	
+				var me = this;
+				this.loadGoogleMaps("https://maps.googleapis.com/maps/api/js?key=AIzaSyBGesGcaaltdGUUKKY6A7HQ4regjFRQV9c", me.setMapData.bind(me));
+		},
+		
+		loadGoogleMaps: function(scriptUrl, callbackFn) {
+			var script = document.createElement('script');
+			script.onload = function() {
+		        callbackFn();
+			}
+			script.src = scriptUrl;
+			document.body.appendChild(script);
+		},
+		
+		// function to set map data
+		setMapData: function() {
+		    var myCenter = new google.maps.LatLng(20.990367, 75.622525);
+		    var mapProp = {center:myCenter, zoom:6, scrollwheel:true, draggable:true, mapTypeId:google.maps.MapTypeId.ROADMAP};
+		    var map = new google.maps.Map(this.getView().byId("googleMap").getDomRef(),mapProp);
+		    var marker = new google.maps.Marker({position:myCenter});
+		    marker.setMap(map);
 		},
 		
 		onRemoveSelection: function () {
