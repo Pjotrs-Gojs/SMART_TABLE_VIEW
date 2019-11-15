@@ -118,9 +118,13 @@
 								</l:SplitPane>
 							</l:PaneContainer>
 							<l:PaneContainer orientation="Vertical">
-								<l:SplitPane  id="rightBig">
 									<l:layoutData>
 								      <l:SplitterLayoutData id="SLDRB" resizable="false" size="100%"/>
+								    </l:layoutData>
+								<l:PaneContainer orientation="Horizontal">
+								<l:SplitPane  id="rightBig">
+									<l:layoutData>
+								      <l:SplitterLayoutData resizable="false" size="20%"/>
 								    </l:layoutData>
 										<f:Form id="FormDetails"
 											editable="false"
@@ -178,18 +182,16 @@
 													</f:FormElement>
 												</f:formElements>
 											</f:FormContainer>
-											<f:FormContainer>
-												<f:formElements>
-													<f:FormElement>
-														<f:fields>
-															<HBox id="googleMap" height="300px" width="100%"></HBox>
-														</f:fields>
-													</f:FormElement>
-												</f:formElements>
-											</f:FormContainer>
 										</f:formContainers>
 									</f:Form>
 								</l:SplitPane>
+								<l:SplitPane>
+									<l:layoutData>
+								      <l:SplitterLayoutData id="map" resizable="false" size="100%"/>
+								    </l:layoutData>
+									<HBox id="googleMap" height="100%" width="100%"></HBox>
+								</l:SplitPane>
+								</l:PaneContainer>
 							<l:PaneContainer orientation="Horizontal">
 								<l:SplitPane  id="right1small">
 								<l:layoutData>

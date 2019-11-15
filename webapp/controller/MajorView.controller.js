@@ -40,8 +40,6 @@ sap.ui.define([
 				this._SLD2.setSize("50%");
 	        var oContext = oView.byId("ST11").getSelectedItem();	
 	        	if(oContext === null){
-		        		this._SLDPP.setResizable(false);
-						this._SLDPP.setSize("100%");
 					if(oView.byId("FormDetails").getVisible()){
 						oView.byId("PP").rerender();
 						}
@@ -62,6 +60,9 @@ sap.ui.define([
 			        	oView.byId("smartFilterBar").setVisible(false);
 			        	
 				} else {
+					if(oView.byId("FormDetails").getVisible()){
+						oView.byId("PP").rerender();
+					}
 					oView.byId("smartFilterBar").setVisible(true);
 					oView.byId("ST22").removeSelections(true);
 					oView.byId("ST2").rebindTable();
@@ -78,6 +79,10 @@ sap.ui.define([
 					oView.byId("FormDetails").setVisible(false);
 					oView.byId("FormCustomer").setVisible(false);
 					oView.byId("FormEmployee").setVisible(false);
+					
+					
+		        		this._SLDPP.setResizable(false);
+						this._SLDPP.setSize("100%");
 		},
 		
 		onBeforeRebindTable3: function(oEvent){
@@ -97,6 +102,8 @@ sap.ui.define([
 		select2: function () {
 			var	oView = this.getView();
 				oView.byId("ST33").setVisible(true);
+		        	this._SLDPP.setResizable(false);
+					this._SLDPP.setSize("100%");
 				// this.byId("T2").setLayoutData(new SplitterLayoutData({resizable : true, size: "33%"}));
 				this._SLD2.setResizable(true);
 				this._SLD2.setSize("33%");
@@ -109,8 +116,6 @@ sap.ui.define([
 	        	
 	    	var oContext = oView.byId("ST22").getSelectedItem();	
 		        if(oContext === null){
-		        	this._SLDPP.setResizable(false);
-					this._SLDPP.setSize("100%");
 				if(oView.byId("FormDetails").getVisible()){
 					oView.byId("PP").rerender();
 					}
@@ -124,6 +129,9 @@ sap.ui.define([
 					this._SLDSS.setSize("50%");
 		        	oView.byId("ST33").removeSelections(true);
 				} else {
+					if(oView.byId("FormDetails").getVisible()){
+						oView.byId("PP").rerender();
+					}
 		        	oView.byId("ST33").removeSelections(true);
 				}
 				
